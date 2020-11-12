@@ -9,6 +9,7 @@ public class FPSPlayer : MonoBehaviour
     [SerializeField] public float mouseSensitivityX = 100f;
     [SerializeField] public float mouseSensitivityY = 100f;
     [SerializeField] public float gravity = -5f;
+    public GameObject weaponHands;
     public Animator hands;
 
     [Header("Combat Settings")]
@@ -33,7 +34,12 @@ public class FPSPlayer : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         if (currentWeapon)
         {
+            weaponHands.SetActive(true);
             UpdateUI();
+        }
+        else
+        {
+            weaponHands.SetActive(false);
         }
     }
 
@@ -97,19 +103,25 @@ public class FPSPlayer : MonoBehaviour
 
     public void SwitchWeapon(Weapon newWeap)
     {
-        if (newWeap.weaponName == currentWeapon.weaponName)
+        weaponHands.SetActive(true);
+        if (currentWeapon)
         {
-            AddMag();
-            UpdateUI();
-            newWeap.gameObject.SetActive(false);
-            return;
+            if (newWeap.weaponName == currentWeapon.weaponName)
+            {
+                AddMag();
+                UpdateUI();
+                newWeap.gameObject.SetActive(false);
+                return;
+            }
         }
         foreach (var w in weaponsAvailable)
         {
             if (w.weaponName == newWeap.weaponName)
             {
-                newWeap.gameObject.SetActive(false);
-                currentWeapon.gameObject.SetActive(false);
+                newWeap.gameObject.SetActive(false); if (currentWeapon)
+                {
+                    currentWeapon.gameObject.SetActive(false);
+                }
                 currentWeapon = w;
                 currentWeapon.gameObject.SetActive(true);
             }
