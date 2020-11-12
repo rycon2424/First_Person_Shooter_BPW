@@ -24004,7 +24004,7 @@ MonoBehaviour:
   stoneImpact: {fileID: 1450638143650814, guid: 71e71d5daf78c91408661cec02a7938d,
     type: 3}
   ammo: 30
-  mags: 0
+  mags: 2
   maxInMag: 30
   cooldown: 0
 --- !u!1 &5591632554545584763
