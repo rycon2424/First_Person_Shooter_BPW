@@ -12,8 +12,10 @@ public class Weapon : MonoBehaviour
     public float fireRate;
     public ParticleSystem muzzleFlash;
     [Space]
-    public GameObject stoneImpact;
+    public GameObject impact;
     [Space]
+    public AudioSource aus;
+    public AudioClip[] shots;
 
     public int ammo;
     [Range(0, 7)] public int mags;
@@ -40,10 +42,13 @@ public class Weapon : MonoBehaviour
 
         if (Physics.Raycast(myRay, out hit, 200))
         {
-            StartCoroutine(DestroyParticle(Instantiate(stoneImpact, hit.point, Quaternion.Euler(hit.normal))));
+            BulletImpact bm = Instantiate(impact, hit.point, Quaternion.Euler(hit.normal)).GetComponent<BulletImpact>();
+            bm.PlaySound(BulletImpact.HitSound.wall);
             Debug.Log(hit.collider.name);
         }
-
+        AudioClip ac = shots[Random.Range(0, shots.Length)];
+        aus.clip = ac;
+        aus.Play();
         ammo--;
     }
 
