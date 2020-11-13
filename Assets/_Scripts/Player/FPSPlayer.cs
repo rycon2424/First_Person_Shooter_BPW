@@ -14,6 +14,8 @@ public class FPSPlayer : MonoBehaviour
 
     [Header("Combat Settings")]
     public Weapon currentWeapon;
+    public Weapon primary;
+    public Weapon secondary;
     public List<Weapon> weaponsAvailable = new List<Weapon>();
     public bool reloading;
 
@@ -35,6 +37,7 @@ public class FPSPlayer : MonoBehaviour
         if (currentWeapon)
         {
             weaponHands.SetActive(true);
+            currentWeapon.gameObject.SetActive(true);
             UpdateUI();
         }
         else
@@ -88,29 +91,82 @@ public class FPSPlayer : MonoBehaviour
         {
             return;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (!currentWeapon.primary)
+            {
+                if (primary)
+                {
+                    SwitchWeapon(primary);
+                }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (currentWeapon.primary)
+            {
+                if (secondary)
+                {
+                    SwitchWeapon(secondary);
+                }
+            }
+        }
         if (Input.GetKeyDown(KeyCode.R) && currentWeapon.mags > 0)
         {
             reloading = true;
             hands.Play("Reload");
         }
-        if (Input.GetMouseButton(0) && currentWeapon.cooldown == false && currentWeapon.ammo > 0)
+        if (currentWeapon.auto == true)
         {
-            hands.Play("Shoot");
-            currentWeapon.Shoot();
-            uim.UpdateAmmo(currentWeapon.ammo);
+            if (Input.GetMouseButton(0) && currentWeapon.cooldown == false && currentWeapon.ammo > 0)
+            {
+                hands.Play("Shoot");
+                currentWeapon.Shoot();
+                uim.UpdateAmmo(currentWeapon.ammo);
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) && currentWeapon.cooldown == false && currentWeapon.ammo > 0)
+            {
+                hands.Play("Shoot");
+                currentWeapon.Shoot();
+                uim.UpdateAmmo(currentWeapon.ammo);
+            }
         }
     }
 
-    public void SwitchWeapon(Weapon newWeap)
+    public void GrabNewWeapon(Weapon newWeap)
     {
         weaponHands.SetActive(true);
+        newWeap.gameObject.SetActive(false);
+        if (newWeap.primary)
+        {
+            primary = newWeap;
+            if (currentWeapon.primary == true)
+            {
+                SwitchWeapon(newWeap);
+            }
+        }
+        else
+        {
+            secondary = newWeap;
+            if (currentWeapon.primary == true)
+            {
+                SwitchWeapon(newWeap);
+            }
+        }
+        UpdateUI();
+    }
+
+    void SwitchWeapon(Weapon newWeap)
+    {
         if (currentWeapon)
         {
             if (newWeap.weaponName == currentWeapon.weaponName)
             {
                 AddMag();
                 UpdateUI();
-                newWeap.gameObject.SetActive(false);
                 return;
             }
         }
@@ -118,7 +174,7 @@ public class FPSPlayer : MonoBehaviour
         {
             if (w.weaponName == newWeap.weaponName)
             {
-                newWeap.gameObject.SetActive(false); if (currentWeapon)
+                if (currentWeapon)
                 {
                     currentWeapon.gameObject.SetActive(false);
                 }

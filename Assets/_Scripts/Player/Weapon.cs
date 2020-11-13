@@ -6,8 +6,10 @@ public class Weapon : MonoBehaviour
 {
     [Header("WeaponStats")]
     public string weaponName;
+    public bool primary;
+    public bool auto;
     public int damage;
-    public float rangePenalty;
+    public float alertSoundRange;
     public float inaccuracy;
     public float fireRate;
     public ParticleSystem muzzleFlash;
@@ -16,7 +18,7 @@ public class Weapon : MonoBehaviour
     [Space]
     public AudioSource aus;
     public AudioClip shot;
-
+    [Space]
     public int ammo;
     [Range(0, 7)] public int mags;
     [Range(1, 30)] public int maxInMag;

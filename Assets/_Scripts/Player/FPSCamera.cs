@@ -43,7 +43,7 @@ public class FPSCamera : MonoBehaviour
             Debug.Log(hit.collider.tag);
             if (hit.collider.CompareTag("WorldWeapon"))
             {
-                FPSPlayer.SwitchWeapon(hit.collider.GetComponent<Weapon>());
+                FPSPlayer.GrabNewWeapon(hit.collider.GetComponent<Weapon>());
             }
         }
     }
