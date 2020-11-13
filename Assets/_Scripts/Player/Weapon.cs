@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
     public GameObject impact;
     [Space]
     public AudioSource aus;
-    public AudioClip[] shots;
+    public AudioClip shot;
 
     public int ammo;
     [Range(0, 7)] public int mags;
@@ -46,8 +46,8 @@ public class Weapon : MonoBehaviour
             bm.PlaySound(BulletImpact.HitSound.wall);
             Debug.Log(hit.collider.name);
         }
-        AudioClip ac = shots[Random.Range(0, shots.Length)];
-        aus.clip = ac;
+        aus.clip = shot;
+        aus.volume = Random.Range(0.7f, 1);
         aus.Play();
         ammo--;
     }
