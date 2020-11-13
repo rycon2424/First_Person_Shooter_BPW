@@ -9538,6 +9538,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 110453659766532277, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
+        type: 3}
+      propertyPath: inaccuracy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 110453659766532277, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 9185646090161189058, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
         type: 3}
       propertyPath: m_IsActive
