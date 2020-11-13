@@ -34,14 +34,14 @@ public class FPSCamera : MonoBehaviour
 
     public void Raycast() // RAYCASTING
     {
-        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * FPSPlayer.rangeCameraRay);  //RayCast Debug
+        //Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * FPSPlayer.rangeCameraRay);  //RayCast Debug
 
         Ray myRay = new Ray(gameObject.transform.position, gameObject.transform.forward);
 
         if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(myRay, out hit, FPSPlayer.rangeCameraRay))
         {
             Debug.Log(hit.collider.tag);
-            if (hit.collider.CompareTag("WorldWeapon"))
+            if (hit.collider.CompareTag("WorldWeapon") && FPSPlayer.reloading == false)
             {
                 FPSPlayer.GrabNewWeapon(hit.collider.GetComponent<Weapon>());
             }
