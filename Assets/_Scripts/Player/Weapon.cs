@@ -47,7 +47,6 @@ public class Weapon : MonoBehaviour
             Debug.Log(hit.collider.name);
         }
         aus.clip = shot;
-        aus.volume = Random.Range(0.7f, 1);
         aus.Play();
         ammo--;
     }

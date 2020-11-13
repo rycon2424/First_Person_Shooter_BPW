@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1425184477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425184480}
+  - component: {fileID: 1425184479}
+  - component: {fileID: 1425184478}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425184480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425184477}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.95, y: -0.635, z: 11.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9186267931912632001}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425184479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425184477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &1425184478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425184477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &110453659766532426
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,8 +176,8 @@ MonoBehaviour:
   fireRate: 0.15
   muzzleFlash: {fileID: 9186267930857930933}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
-  aus: {fileID: 0}
-  shots: []
+  aus: {fileID: 9148014842344831744}
+  shot: {fileID: 8300000, guid: 044689555eea60644b0d0ace2cecc6cf, type: 3}
   ammo: 30
   mags: 3
   maxInMag: 30
@@ -128,8 +194,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
-  m_Pitch: 1
+  m_Volume: 0.15
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -5419,7 +5485,6 @@ GameObject:
   - component: {fileID: 3670729737428023354}
   - component: {fileID: 3645972906061669384}
   - component: {fileID: 3653042538598479536}
-  - component: {fileID: 3603448893676131956}
   - component: {fileID: 3667224423737151661}
   - component: {fileID: 5591420338447385368}
   m_Layer: 0
@@ -5496,20 +5561,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3603448893676131956
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3667224423737151650}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43531877904820074, guid: d70ea84b37167204484057e531733574, type: 2}
 --- !u!114 &3667224423737151661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5529,8 +5580,8 @@ MonoBehaviour:
   fireRate: 0.1
   muzzleFlash: {fileID: 2798290664605205231}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
-  aus: {fileID: 0}
-  shots: []
+  aus: {fileID: 5591420338447385368}
+  shot: {fileID: 8300000, guid: 72a2a3c6729ec8c4cb592bdae4f3a614, type: 3}
   ammo: 30
   mags: 2
   maxInMag: 30
@@ -6119,7 +6170,6 @@ GameObject:
   - component: {fileID: 4549279997456216327}
   - component: {fileID: 4565372183610552757}
   - component: {fileID: 4573831185718270415}
-  - component: {fileID: 4596377319469968477}
   - component: {fileID: 4551363165312172950}
   - component: {fileID: 4635785853544337443}
   m_Layer: 0
@@ -6195,20 +6245,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4596377319469968477
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4551363165312172951}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43040860746499972, guid: dae341061aec79f4eb6a650d63b972d3, type: 2}
 --- !u!114 &4551363165312172950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6228,8 +6264,8 @@ MonoBehaviour:
   fireRate: 0.125
   muzzleFlash: {fileID: 9186267931670886715}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
-  aus: {fileID: 0}
-  shots: []
+  aus: {fileID: 4635785853544337443}
+  shot: {fileID: 8300000, guid: 7c41466d436df054598faf9402e90bc9, type: 3}
   ammo: 30
   mags: 2
   maxInMag: 30
@@ -6246,7 +6282,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6974,11 +7010,10 @@ GameObject:
   - component: {fileID: 7092968359049588214}
   - component: {fileID: 7068140718462362592}
   - component: {fileID: 7076655201058707096}
-  - component: {fileID: 7099278393935947662}
   - component: {fileID: 7090338444465275733}
   - component: {fileID: 2096952554215067872}
   m_Layer: 0
-  m_Name: Mini-Ak
+  m_Name: Aks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7049,20 +7084,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7099278393935947662
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7090338444465275754}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43234705541961954, guid: 80522bcae70a4b4429f9116c00a16cd8, type: 2}
 --- !u!114 &7090338444465275733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7075,17 +7096,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716d4f08f9af57542a596fc09c0234ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Mini-Ak
+  weaponName: Aks
   damage: 12
   rangePenalty: 0
   inaccuracy: 10
   fireRate: 0.05
   muzzleFlash: {fileID: 9186267930857930933}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
-  aus: {fileID: 0}
-  shots: []
-  ammo: 0
-  mags: 0
+  aus: {fileID: 2096952554215067872}
+  shot: {fileID: 8300000, guid: ac2aab8a08d17324491655a9d9856002, type: 3}
+  ammo: 20
+  mags: 2
   maxInMag: 25
   cooldown: 0
 --- !u!82 &2096952554215067872
@@ -10212,7 +10233,6 @@ GameObject:
   - component: {fileID: 9181715758444018584}
   - component: {fileID: 9153944222618826572}
   - component: {fileID: 9164553950753530456}
-  - component: {fileID: 9194255378012211404}
   - component: {fileID: 9185877055281568341}
   - component: {fileID: 1940088687184352}
   m_Layer: 0
@@ -10289,20 +10309,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &9194255378012211404
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9185877055281568362}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43724545069757062, guid: 2f0fcfd109299f94e9cc4638c750e5f8, type: 2}
 --- !u!114 &9185877055281568341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10322,10 +10328,10 @@ MonoBehaviour:
   fireRate: 0.035
   muzzleFlash: {fileID: 9186267932281329083}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
-  aus: {fileID: 0}
-  shots: []
+  aus: {fileID: 1940088687184352}
+  shot: {fileID: 8300000, guid: e6d4eccb452215e449d4df1c4d37af46, type: 3}
   ammo: 23
-  mags: 0
+  mags: 1
   maxInMag: 25
   cooldown: 0
 --- !u!82 &1940088687184352
@@ -10340,7 +10346,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23002,6 +23008,7 @@ Transform:
   m_Children:
   - {fileID: 9186267932195913409}
   - {fileID: 9186267931955677413}
+  - {fileID: 1425184480}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23026,8 +23033,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  mouseSensitivityX: 250
-  mouseSensitivityY: 1
+  mouseSensitivityX: 300
+  mouseSensitivityY: 1.5
   gravity: -0.05
   weaponHands: {fileID: 8670524870661835326}
   hands: {fileID: 8670524870661835321}
