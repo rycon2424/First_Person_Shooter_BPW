@@ -9,6 +9,7 @@ public class BulletImpact : MonoBehaviour
     public AudioClip[] flesh;
     [Space]
     public GameObject stoneImpact;
+    public GameObject fleshImpact;
 
     public enum HitSound { wall, flesh}
 
@@ -22,6 +23,7 @@ public class BulletImpact : MonoBehaviour
                 break;
             case HitSound.flesh:
                 aus.clip = ClipToPlay(flesh);
+                Instantiate(fleshImpact, transform);
                 break;
             default:
                 break;

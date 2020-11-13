@@ -44,8 +44,18 @@ public class Weapon : MonoBehaviour
 
         if (Physics.Raycast(myRay, out hit, 200))
         {
-            BulletImpact bm = Instantiate(impact, hit.point, Quaternion.Euler(hit.normal)).GetComponent<BulletImpact>();
-            bm.PlaySound(BulletImpact.HitSound.wall);
+            BulletImpact bm;
+            bm = Instantiate(impact, hit.point, Quaternion.Euler(hit.normal)).GetComponent<BulletImpact>();
+            if (hit.collider.CompareTag("Humanoid"))
+            {
+                bm.PlaySound(BulletImpact.HitSound.flesh);
+                Actor target = hit.collider.GetComponent<Enemy>();
+                target.TakeDamage(damage);
+            }
+            else
+            {
+                bm.PlaySound(BulletImpact.HitSound.wall);
+            }
             Debug.Log(hit.collider.name);
         }
         aus.clip = shot;

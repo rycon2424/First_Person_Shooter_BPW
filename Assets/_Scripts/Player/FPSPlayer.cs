@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FPSPlayer : MonoBehaviour
+public class FPSPlayer : Actor
 {
     [Header("Player Settings")]
     [SerializeField] float moveSpeed = 5f;  // THE PLAYERS MOVEMENTSPEED
@@ -206,7 +206,7 @@ public class FPSPlayer : MonoBehaviour
     {
         if (currentWeapon.mags < 7)
         {
-        currentWeapon.mags += 2;
+            currentWeapon.mags += 2;
             uim.UpdateMags(currentWeapon.mags);
         }
     }

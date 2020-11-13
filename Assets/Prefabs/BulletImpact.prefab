@@ -65,6 +65,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6aea87e44288da042ab198800e31b2a0, type: 3}
   stoneImpact: {fileID: 1450638143650814, guid: 71e71d5daf78c91408661cec02a7938d,
     type: 3}
+  fleshImpact: {fileID: 4972453062667519447, guid: 8c1496bd62b5525449bba497a3af6ec1,
+    type: 3}
 --- !u!82 &7043585007356237464
 AudioSource:
   m_ObjectHideFlags: 0
