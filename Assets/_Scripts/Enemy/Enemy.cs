@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : Actor
 {
-    public enum EnemyState {patrol, alert, investigating}
+    public enum EnemyState {patrol, alert, investigating, cover}
     public EnemyState currentState;
 
     private NavMeshAgent agent;
@@ -40,11 +40,18 @@ public class Enemy : Actor
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        if (currentState != EnemyState.alert)
+        if (currentState == EnemyState.patrol)
         {
-            currentState = EnemyState.alert;
+            currentState = EnemyState.cover;
             StartCoroutine(SearchCover());
             anim.SetTrigger("EnterCombat");
+        }
+        if (currentState == EnemyState.alert)
+        {
+            var lookPos = player.transform.position - transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 80);
         }
     }
 
@@ -69,6 +76,7 @@ public class Enemy : Actor
             Debug.Log(Vector3.Distance(transform.position, newPos));
         }
         anim.SetTrigger("ExitCover");
+        currentState = EnemyState.alert;
     }
 
     void Patrol()
@@ -78,7 +86,25 @@ public class Enemy : Actor
 
     void Alert()
     {
-
+        Vector3 startPos = transform.position + Vector3.up;
+        Vector3 direction = player.position - startPos;
+        Ray scan = new Ray(startPos, direction);
+        RaycastHit hit;
+        Debug.DrawRay(startPos, direction * 2, Color.blue);
+        if (Physics.Raycast(scan, out hit, 10))
+        {
+            if (hit.collider.CompareTag("Humanoid"))
+            {
+                FPSPlayer player = hit.collider.GetComponent<FPSPlayer>();
+                if (player)
+                {
+                    var lookPos = player.transform.position - transform.position;
+                    lookPos.y = 0;
+                    var rotation = Quaternion.LookRotation(lookPos);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
+                }
+            }
+        }
     }
 
     void Investigating()

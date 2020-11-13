@@ -14369,8 +14369,8 @@ MonoBehaviour:
   auto: 1
   damage: 19
   alertSoundRange: 0
-  inaccuracy: 2
-  fireRate: 0.15
+  inaccuracy: 1
+  fireRate: 0.2
   muzzleFlash: {fileID: 9186267930857930933}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
   aus: {fileID: 9148014842344831744}
@@ -23888,7 +23888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716d4f08f9af57542a596fc09c0234ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Sig Sauer
+  weaponName: SIG Sauer
   primary: 0
   auto: 0
   damage: 4
@@ -25051,12 +25051,12 @@ GameObject:
   - component: {fileID: 9164580028623142688}
   - component: {fileID: 1598113041}
   m_Layer: 0
-  m_Name: Baretta M9
+  m_Name: M9 Barreta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9182104201043267374
 Transform:
   m_ObjectHideFlags: 0
@@ -25095,7 +25095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716d4f08f9af57542a596fc09c0234ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Baretta M9
+  weaponName: M9 Barreta
   primary: 0
   auto: 0
   damage: 5
@@ -26229,7 +26229,6 @@ GameObject:
   - component: {fileID: 9186267930631099987}
   - component: {fileID: 9186267930631099996}
   - component: {fileID: 9186267930631099997}
-  - component: {fileID: 9186267930631099986}
   m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
@@ -26298,20 +26297,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &9186267930631099986
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9186267930631099984}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &9186267930650511223
 GameObject:
   m_ObjectHideFlags: 0
@@ -38453,15 +38438,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230a3eb51289d10439bf29f10c08253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  isAlive: 1
   moveSpeed: 8
   mouseSensitivityX: 300
   mouseSensitivityY: 1.5
   gravity: -0.05
   weaponHands: {fileID: 8670524870661835326}
   hands: {fileID: 8670524870661835321}
-  currentWeapon: {fileID: 1598113042}
-  primary: {fileID: 9185877055281568341}
-  secondary: {fileID: 1598113042}
+  currentWeapon: {fileID: 0}
+  primary: {fileID: 0}
+  secondary: {fileID: 0}
   weaponsAvailable:
   - {fileID: 3667224423737151661}
   - {fileID: 9185877055281568341}
