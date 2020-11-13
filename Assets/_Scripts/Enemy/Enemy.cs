@@ -73,7 +73,7 @@ public class Enemy : Actor
         while (Vector3.Distance(transform.position, newPos) > 0.75f)
         {
             yield return new WaitForEndOfFrame();
-            Debug.Log(Vector3.Distance(transform.position, newPos));
+            //Debug.Log(Vector3.Distance(transform.position, newPos));
         }
         anim.SetTrigger("ExitCover");
         currentState = EnemyState.alert;
