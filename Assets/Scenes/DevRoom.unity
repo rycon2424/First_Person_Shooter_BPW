@@ -751,18 +751,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1659253158}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1723217669 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4551363165312172950, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
-    type: 3}
-  m_PrefabInstance: {fileID: 9186267931815728053}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 716d4f08f9af57542a596fc09c0234ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1878721673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1851,8 +1839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716d4f08f9af57542a596fc09c0234ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: M4A4
-  primary: 1
+  weaponName: Baretta M9
+  primary: 0
   auto: 0
   damage: 0
   alertSoundRange: 0
@@ -9567,12 +9555,17 @@ PrefabInstance:
         type: 3}
       propertyPath: currentWeapon
       value: 
-      objectReference: {fileID: 1723217669}
+      objectReference: {fileID: 0}
     - target: {fileID: 9186267931912632000, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
         type: 3}
       propertyPath: primary
       value: 
-      objectReference: {fileID: 1723217669}
+      objectReference: {fileID: 0}
+    - target: {fileID: 9186267931912632000, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
+        type: 3}
+      propertyPath: secondary
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9186267931912632001, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -143,7 +143,11 @@ public class FPSPlayer : MonoBehaviour
         if (newWeap.primary)
         {
             primary = newWeap;
-            if (currentWeapon.primary == true)
+            if (currentWeapon == null)
+            {
+                SwitchWeapon(newWeap);
+            }
+            else if (currentWeapon.primary == true)
             {
                 SwitchWeapon(newWeap);
             }
@@ -151,7 +155,11 @@ public class FPSPlayer : MonoBehaviour
         else
         {
             secondary = newWeap;
-            if (currentWeapon.primary == true)
+            if (currentWeapon == null)
+            {
+                SwitchWeapon(newWeap);
+            }
+            else if (currentWeapon.primary == false)
             {
                 SwitchWeapon(newWeap);
             }
@@ -180,9 +188,11 @@ public class FPSPlayer : MonoBehaviour
                 }
                 currentWeapon = w;
                 currentWeapon.gameObject.SetActive(true);
+                UpdateUI();
+                return;
             }
         }
-        UpdateUI();
+        Debug.LogError("Weapon not found in list");
     }
 
     void UpdateUI()
