@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
 
         float softInaccuracy = inaccuracy / 100;
 
-        Vector3 offset = new Vector3(Random.Range(-softInaccuracy, softInaccuracy), Random.Range(-softInaccuracy, softInaccuracy), 0);
+        Vector3 offset = new Vector3(Random.Range(-softInaccuracy, softInaccuracy), Random.Range(-softInaccuracy, softInaccuracy), Random.Range(-softInaccuracy, softInaccuracy));
 
         Vector3 newDirection = (offset + transform.forward).normalized;
 
