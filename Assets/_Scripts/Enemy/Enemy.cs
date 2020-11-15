@@ -88,7 +88,7 @@ public class Enemy : Actor
     FPSPlayer p;
     void Alert()
     {
-        GameObject target = SeeActor();
+        GameObject target = SeeActor(transform.position);
         if (target)
         {
             p = target.GetComponent<FPSPlayer>();
@@ -117,7 +117,7 @@ public class Enemy : Actor
         {
             anim.SetBool("Walking", false);
         }
-        GameObject target = SeeActor();
+        GameObject target = SeeActor(transform.position);
         if (target)
         {
             p = target.GetComponent<FPSPlayer>();
@@ -171,9 +171,9 @@ public class Enemy : Actor
         }
     }
 
-    GameObject SeeActor()
+    GameObject SeeActor(Vector3 fromWhere)
     {
-        Vector3 startPos = transform.position + Vector3.up;
+        Vector3 startPos = fromWhere + Vector3.up;
         Vector3 direction = player.position - startPos;
         Ray scan = new Ray(startPos, direction);
         RaycastHit hit;
@@ -192,18 +192,10 @@ public class Enemy : Actor
     {
         Cover[] availableCovers = FindObjectsOfType<Cover>();
         Cover newCover = availableCovers[Random.Range(0, availableCovers.Length)];
-        for (int i = 0; i < availableCovers.Length; i++)
+        if (AvailableCover(availableCovers) == false)
         {
-            if (availableCovers[i].taken == false)
-            {
-                break;
-            }
-            if (availableCovers[availableCovers.Length - 1].taken == true)
-            {
-                Debug.Log("all covers are taken");
-                currentState = EnemyState.alert;
-                yield break;
-            }
+            currentState = EnemyState.alert;
+            yield break;
         }
         while (newCover.taken)
         {
@@ -219,12 +211,38 @@ public class Enemy : Actor
 
         while (Vector3.Distance(transform.position, newPos) > 0.75f)
         {
-            yield return new WaitForEndOfFrame();
-            //Debug.Log(Vector3.Distance(transform.position, newPos));
+            yield return new WaitForEndOfFrame();;
         }
         newCover.taken = false;
         anim.SetTrigger("ExitCover");
         currentState = EnemyState.alert;
+    }
+
+    bool IsCoverSafe(Vector3 coverPosition)
+    {
+        GameObject target = SeeActor(coverPosition);
+        if (target)
+        {
+            FPSPlayer temp = target.GetComponent<FPSPlayer>();
+            if (temp != null)
+            {
+                Debug.Log("UnSafe");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool AvailableCover(Cover[] covers)
+    {
+        foreach (var c in covers)
+        {
+            if (c.taken == false && IsCoverSafe(c.transform.position))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b624560c3a1d764abc8497b423d3429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taken: 1
+  taken: 0
 --- !u!4 &1344012936
 Transform:
   m_ObjectHideFlags: 0
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b624560c3a1d764abc8497b423d3429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taken: 1
+  taken: 0
 --- !u!1001 &2096037887
 PrefabInstance:
   m_ObjectHideFlags: 0

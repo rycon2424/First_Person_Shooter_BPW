@@ -56,7 +56,7 @@ public class Weapon : MonoBehaviour
             {
                 bm.PlaySound(BulletImpact.HitSound.wall);
             }
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
         }
         aus.clip = shot;
         aus.Play();
