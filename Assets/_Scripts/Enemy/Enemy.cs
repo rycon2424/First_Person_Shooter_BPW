@@ -59,10 +59,23 @@ public class Enemy : Actor
     {
         Cover[] availableCovers = FindObjectsOfType<Cover>();
         Cover newCover = availableCovers[Random.Range(0, availableCovers.Length)];
+        for (int i = 0; i < availableCovers.Length; i++)
+        {
+            if (availableCovers[i].taken == false)
+            {
+                break;
+            }
+            if (availableCovers[availableCovers.Length - 1].taken == true)
+            {
+                Debug.Log("all covers are taken");
+                currentState = EnemyState.alert;
+                yield break;
+            }
+        }
         while (newCover.taken)
         {
             newCover = availableCovers[Random.Range(0, availableCovers.Length)];
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
         newCover.taken = true;
 
