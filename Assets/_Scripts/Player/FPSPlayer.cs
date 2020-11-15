@@ -120,20 +120,24 @@ public class FPSPlayer : Actor
         {
             if (Input.GetMouseButton(0) && currentWeapon.cooldown == false && currentWeapon.ammo > 0)
             {
-                hands.Play("Shoot");
-                currentWeapon.Shoot();
-                uim.UpdateAmmo(currentWeapon.ammo);
+                ShootWithGun();
             }
         }
         else
         {
             if (Input.GetMouseButtonDown(0) && currentWeapon.cooldown == false && currentWeapon.ammo > 0)
             {
-                hands.Play("Shoot");
-                currentWeapon.Shoot();
-                uim.UpdateAmmo(currentWeapon.ammo);
+                ShootWithGun();
             }
         }
+    }
+
+    void ShootWithGun()
+    {
+        hands.Play("Shoot");
+        currentWeapon.Shoot();
+        currentWeapon.ammo--;
+        uim.UpdateAmmo(currentWeapon.ammo);
     }
 
     public void GrabNewWeapon(Weapon newWeap)
@@ -218,6 +222,11 @@ public class FPSPlayer : Actor
         currentWeapon.mags--;
         currentWeapon.ammo = currentWeapon.maxInMag;
         UpdateUI();
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
     }
 
 }

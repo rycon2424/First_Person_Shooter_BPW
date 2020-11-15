@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
             if (hit.collider.CompareTag("Humanoid"))
             {
                 bm.PlaySound(BulletImpact.HitSound.flesh);
-                Actor target = hit.collider.GetComponent<Enemy>();
+                Actor target = hit.collider.GetComponent<Actor>();
                 target.TakeDamage(damage);
             }
             else
@@ -60,7 +60,6 @@ public class Weapon : MonoBehaviour
         }
         aus.clip = shot;
         aus.Play();
-        ammo--;
     }
 
     IEnumerator DestroyParticle(GameObject ps)
