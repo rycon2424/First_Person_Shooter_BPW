@@ -6,6 +6,7 @@ public class AlertState : State
 {
     public override void OnStateEnter(Enemy e)
     {
+        e.searchBox.transform.localScale = e.viewDistanceAlert;
         e.playerLastPosition = e.player.position;
         e.searchBox.enabled = false;
         e.anim.SetBool("Walking", false);

@@ -346,12 +346,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2255e9dbab2372c4b91adf92c7988283, type: 3}
   - {fileID: 8300000, guid: bdfffa09ae08c2c418d47cfaa30edad9, type: 3}
   footSource: {fileID: 2223553930294677470}
-  currentState: 0
-  coverChance: 50
+  coverChance: 100
   reactionTime: 1
   maxPatience: 2
-  eyeOffset: {x: 0, y: 0.65, z: 0}
+  viewDistancePatrol: {x: 4, y: 1.5, z: 1.5}
+  viewDistanceAlert: {x: 7, y: 2, z: 2}
   weapon: {fileID: 2223553929235503661}
+  playerLastPosition: {x: 0, y: 0, z: 0}
+  agent: {fileID: 0}
+  anim: {fileID: 0}
+  player: {fileID: 0}
+  fpsPlayer: {fileID: 0}
+  shooting: 0
+  waitingForPatience: 0
+  searchBox: {fileID: 0}
+  tempPlayer: {fileID: 0}
+  eyeOffset: {x: 0, y: 0.65, z: 0}
 --- !u!143 &2222598214466052070
 CharacterController:
   m_ObjectHideFlags: 0
@@ -11254,7 +11264,6 @@ GameObject:
   - component: {fileID: 4244443722599304080}
   - component: {fileID: 4223941929119746850}
   - component: {fileID: 4232400845076341592}
-  - component: {fileID: 4182891670031472330}
   - component: {fileID: 4245963923858864386}
   m_Layer: 0
   m_Name: Ak-47 SWEP
@@ -11329,20 +11338,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4182891670031472330
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4245963923858864384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43040860746499972, guid: dae341061aec79f4eb6a650d63b972d3, type: 2}
 --- !u!82 &4245963923858864386
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11704,3 +11699,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39de62ad2a19bf74bbc72e1882398b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allies: []
+  confirmedDeath: []

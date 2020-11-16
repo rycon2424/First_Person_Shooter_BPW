@@ -6,11 +6,12 @@ using UnityEngine.AI;
 public class Enemy : Actor
 {
     public State currentState;
-    [Space]
+    [Header("Stats")]
     [Range(0, 100)] public int coverChance;
     public float reactionTime;
     public float maxPatience;
-    public Vector3 eyeOffset;
+    public Vector3 viewDistancePatrol = new Vector3(5, 1, 1);
+    public Vector3 viewDistanceAlert = new Vector3(7, 2, 2);
     [Space]
     public Weapon weapon;
 
@@ -24,6 +25,7 @@ public class Enemy : Actor
     [HideInInspector] public bool waitingForPatience;
     [HideInInspector] public MeshCollider searchBox;
     [HideInInspector] public FPSPlayer tempPlayer;
+    [HideInInspector] public Vector3 eyeOffset;
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class Enemy : Actor
         fpsPlayer = FindObjectOfType<FPSPlayer>();
         player = fpsPlayer.transform;
         searchBox = GetComponentInChildren<MeshCollider>();
+        eyeOffset = new Vector3(0, 0.65f, 0);
         SetupStateMachine();
     }
 

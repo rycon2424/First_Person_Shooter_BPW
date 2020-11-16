@@ -6,6 +6,7 @@ public class PatrolState : State
 {
     public override void OnStateEnter(Enemy e)
     {
+        e.searchBox.transform.localScale = e.viewDistancePatrol;
     }
 
     public override void OnStateExit(Enemy e)
