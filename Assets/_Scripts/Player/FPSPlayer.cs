@@ -230,6 +230,7 @@ public class FPSPlayer : Actor
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        uim.UpdateHealth(health);
     }
 
     void GunAlert(float alertRange)

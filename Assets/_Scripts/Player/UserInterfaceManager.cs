@@ -15,6 +15,11 @@ public class UserInterfaceManager : MonoBehaviour
         weaponName.text = newName;
     }
 
+    public void UpdateHealth(int health)
+    {
+        playerHp.value = health;
+    }
+
     public void UpdateMags(int currentmags)
     {
         foreach (var m in mags)
