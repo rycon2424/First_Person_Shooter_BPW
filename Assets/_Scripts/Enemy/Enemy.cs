@@ -74,14 +74,6 @@ public class Enemy : Actor
         {
             GunShotAlert();
         }
-        if (currentState == EnemyState.alert)
-        {
-            var lookPos = player.transform.position - transform.position;
-            lookPos.y = 0;
-            var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 80);
-            playerLastPosition = player.position;
-        }
     }
 
     public void GunShotAlert()
@@ -91,11 +83,11 @@ public class Enemy : Actor
         agent.SetDestination(transform.position);
         anim.SetBool("Walking", false);
         waitingForPatience = false;
-
         if (chance <= coverChance && currentState == EnemyState.patrol)
         {
             currentState = EnemyState.cover;
             StartCoroutine(SearchCover());
+            return;
         }
         currentState = EnemyState.alert;
         anim.SetTrigger("EnterCombat");

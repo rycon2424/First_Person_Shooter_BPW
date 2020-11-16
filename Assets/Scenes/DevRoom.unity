@@ -588,6 +588,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1978535154323940, guid: 2516e5d2e77da80409d1fcfc6c9a97a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4896133274672510, guid: 2516e5d2e77da80409d1fcfc6c9a97a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.8474922
@@ -634,15 +638,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4896133274672510, guid: 2516e5d2e77da80409d1fcfc6c9a97a3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.22
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4896133274672510, guid: 2516e5d2e77da80409d1fcfc6c9a97a3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.22
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4896133274672510, guid: 2516e5d2e77da80409d1fcfc6c9a97a3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.22
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 64662683731927578, guid: 2516e5d2e77da80409d1fcfc6c9a97a3,
         type: 3}
@@ -1050,8 +1054,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998232036}
-  m_LocalRotation: {x: 0.00045267667, y: 0.9994839, z: -0.028718647, w: 0.014394119}
-  m_LocalPosition: {x: -12.01, y: 4.774, z: 8.367}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.9123917, y: 0.084, z: -5.6661263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4979,6 +4983,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 2222598214466052069, guid: a0f0d1f62b0248b4cbe24d76cb4e05ac,
+        type: 3}
+      propertyPath: coverChance
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f0d1f62b0248b4cbe24d76cb4e05ac, type: 3}
 --- !u!1001 &9186267931815728053
@@ -5062,6 +5071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Height
       value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9186267931912632004, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
+        type: 3}
+      propertyPath: m_StepOffset
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9186267931912632005, guid: 7d3e55c61365d224e9ac6cc6d2ef3b14,
         type: 3}
