@@ -19775,7 +19775,7 @@ MonoBehaviour:
   auto: 1
   damage: 24
   alertSoundRange: 30
-  inaccuracy: 5
+  inaccuracy: 2.5
   fireRate: 0.1
   muzzleFlash: {fileID: 2798290664605205231}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
@@ -20461,7 +20461,7 @@ MonoBehaviour:
   auto: 1
   damage: 30
   alertSoundRange: 40
-  inaccuracy: 6
+  inaccuracy: 4
   fireRate: 0.125
   muzzleFlash: {fileID: 9186267931670886715}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
@@ -21302,7 +21302,7 @@ MonoBehaviour:
   auto: 1
   damage: 12
   alertSoundRange: 30
-  inaccuracy: 10
+  inaccuracy: 6
   fireRate: 0.05
   muzzleFlash: {fileID: 9186267930857930933}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
@@ -25786,7 +25786,7 @@ MonoBehaviour:
   auto: 0
   damage: 10
   alertSoundRange: 20
-  inaccuracy: 3
+  inaccuracy: 2
   fireRate: 0.035
   muzzleFlash: {fileID: 9186267932281329083}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
@@ -38518,7 +38518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230a3eb51289d10439bf29f10c08253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
   isAlive: 1
   footsteps: []
   footSource: {fileID: 0}
