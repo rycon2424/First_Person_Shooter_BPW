@@ -87,6 +87,10 @@ public class Enemy : Actor
     public void GunShotAlert()
     {
         int chance = Random.Range(0, 101);
+        playerLastPosition = player.position;
+        agent.SetDestination(transform.position);
+        anim.SetBool("Walking", false);
+        waitingForPatience = false;
         if (chance <= coverChance)
         {
             currentState = EnemyState.cover;
@@ -125,6 +129,7 @@ public class Enemy : Actor
             {
                 StartCoroutine(Patience());
                 waitingForPatience = true;
+                Debug.Log("Getting patient");
             }
         }
     }
