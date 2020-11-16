@@ -91,7 +91,6 @@ public class Enemy : Actor
             return;
         }
         currentState = EnemyState.alert;
-        anim.SetTrigger("EnterCombat");
     }
 
     void Patrol()
@@ -195,6 +194,11 @@ public class Enemy : Actor
     IEnumerator SearchCover()
     {
         Cover[] availableCovers = FindObjectsOfType<Cover>();
+        if (availableCovers.Length == 0)
+        {
+            currentState = EnemyState.alert;
+            yield break;
+        }
         Cover newCover = availableCovers[Random.Range(0, availableCovers.Length)];
         if (AvailableCover(availableCovers) == false)
         {
