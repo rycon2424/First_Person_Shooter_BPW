@@ -238,7 +238,7 @@ public class FPSPlayer : Actor
         List<Enemy> notAlertedEnemies = new List<Enemy>();
         foreach (var enemy in enemiesOnMap)
         {
-            if (enemy.currentState != Enemy.EnemyState.cover)
+            if (!enemy.statemachine.IsInState("CoverState"))
             {
                 if (enemy.isAlive == true)
                 {

@@ -5,8 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : Actor
 {
-    public enum EnemyState { patrol, alert, investigating, cover }
-    public EnemyState currentState;
+    public State currentState;
     [Space]
     [Range(0, 100)] public int coverChance;
     public float reactionTime;
@@ -15,14 +14,16 @@ public class Enemy : Actor
     [Space]
     public Weapon weapon;
 
-    private Vector3 playerLastPosition;
-    private NavMeshAgent agent;
-    private Animator anim;
-    private Transform player;
-    private FPSPlayer fpsPlayer;
-    private bool shooting;
-    private bool waitingForPatience;
-    private MeshCollider searchBox;
+    [HideInInspector] public StateMachine statemachine;
+    [HideInInspector] public Vector3 playerLastPosition;
+    [HideInInspector] public NavMeshAgent agent;
+    [HideInInspector] public Animator anim;
+    [HideInInspector] public Transform player;
+    [HideInInspector] public FPSPlayer fpsPlayer;
+    [HideInInspector] public bool shooting;
+    [HideInInspector] public bool waitingForPatience;
+    [HideInInspector] public MeshCollider searchBox;
+    [HideInInspector] public FPSPlayer tempPlayer;
 
     void Start()
     {
@@ -31,6 +32,24 @@ public class Enemy : Actor
         fpsPlayer = FindObjectOfType<FPSPlayer>();
         player = fpsPlayer.transform;
         searchBox = GetComponentInChildren<MeshCollider>();
+        SetupStateMachine();
+    }
+
+    void SetupStateMachine()
+    {
+        statemachine = new StateMachine();
+        InvestigationState it = new InvestigationState();
+        CoverState cs = new CoverState();
+        PatrolState ps = new PatrolState();
+        AlertState at = new AlertState();
+        DeathState ds = new DeathState();
+
+        statemachine.allStates.Add(it);
+        statemachine.allStates.Add(cs);
+        statemachine.allStates.Add(ps);
+        statemachine.allStates.Add(at);
+        statemachine.allStates.Add(ds);
+        statemachine.GoToState(this, "PatrolState");
     }
 
     void Update()
@@ -39,39 +58,23 @@ public class Enemy : Actor
         {
             return;
         }
+        currentState.StateUpdate(this);
         weapon.transform.LookAt(player);
-        switch (currentState)
-        {
-            case EnemyState.patrol:
-                Patrol();
-                break;
-            case EnemyState.alert:
-                Alert();
-                break;
-            case EnemyState.investigating:
-                Investigating();
-                break;
-            default:
-                break;
-        }
     }
 
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        if (isAlive == false)
+        if (statemachine.IsInState("DeathState"))
         {
             return;
         }
         if (health <= 0)
         {
-            anim.SetTrigger("Death");
-            isAlive = false;
-            GetComponent<CharacterController>().enabled = false;
-            agent.SetDestination(transform.position);
+            statemachine.GoToState(this ,"DeathState");
             return;
         }
-        if (currentState == EnemyState.patrol)
+        if (statemachine.IsInState("PatrolState"))
         {
             GunShotAlert();
         }
@@ -80,68 +83,26 @@ public class Enemy : Actor
     public void GunShotAlert()
     {
         int chance = Random.Range(0, 101);
-        playerLastPosition = player.position;
-        agent.SetDestination(transform.position);
-        anim.SetBool("Walking", false);
         waitingForPatience = false;
-        if (chance <= coverChance && currentState == EnemyState.patrol)
+        if (chance <= coverChance && statemachine.IsInState("PatrolState"))
         {
-            currentState = EnemyState.cover;
             StartCoroutine(SearchCover());
             return;
         }
-        currentState = EnemyState.alert;
+        statemachine.GoToState(this, "AlertState");
     }
-
-    void Patrol()
+    
+    public void StartRoutine(string Cname)
     {
-
-    }
-
-    FPSPlayer p;
-    void Alert()
-    {
-        GameObject target = SeeActor(transform.position + eyeOffset);
-        if (target)
-        {
-            p = target.GetComponent<FPSPlayer>();
-            if (p)
-            {
-                waitingForPatience = false;
-                StartShooting();
-            }
-        }
-        else
-        {
-            shooting = false;
-            p = null;
-            if (waitingForPatience == false)
-            {
-                StartCoroutine(Patience());
-                waitingForPatience = true;
-                Debug.Log("Getting patient");
-            }
-        }
-    }
-
-    void Investigating()
-    {
-        if (Vector3.Distance(playerLastPosition, transform.position) < 1.5f)
-        {
-            anim.SetBool("Walking", false);
-        }
+        StartCoroutine(Cname);
     }
 
     IEnumerator Patience()
     {
         yield return new WaitForSeconds(maxPatience);
-        if (p == null && currentState != EnemyState.investigating)
+        if (tempPlayer == null && !statemachine.IsInState("InvestigationState"))
         {
-            anim.SetBool("Walking", true);
-            agent.speed = 1.5f;
-            agent.SetDestination(playerLastPosition);
-            searchBox.enabled = true;
-            currentState = EnemyState.investigating;
+            statemachine.GoToState(this, "InvestigationState");
         }
     }
 
@@ -150,31 +111,44 @@ public class Enemy : Actor
         yield return new WaitForSeconds(reactionTime);
         shooting = true;
     }
-
-    void StartShooting()
+    
+    IEnumerator SearchCover()
     {
-        playerLastPosition = player.position;
-
-        var lookPos = p.transform.position - transform.position;
-        lookPos.y = 0;
-        var rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5);
-
-        if (weapon.cooldown == false)
+        Cover[] availableCovers = FindObjectsOfType<Cover>();
+        if (availableCovers.Length == 0)
         {
-            if (shooting == false)
-            {
-                StartCoroutine(ReactionShoot());
-            }
-            else
-            {
-                weapon.transform.LookAt(player);
-                weapon.Shoot();
-            }
+            statemachine.GoToState(this, "AlertState");
+            yield break;
         }
+        Cover newCover = availableCovers[Random.Range(0, availableCovers.Length)];
+        if (AvailableCover(availableCovers) == false)
+        {
+            statemachine.GoToState(this, "AlertState");
+            yield break;
+        }
+        while (newCover.taken)
+        {
+            newCover = availableCovers[Random.Range(0, availableCovers.Length)];
+            yield return new WaitForSeconds(0.1f);
+        }
+        newCover.taken = true;
+
+        Vector3 newPos = newCover.transform.position;
+        agent.SetDestination(newPos);
+
+        statemachine.GoToState(this, "CoverState");
+
+        while (Vector3.Distance(transform.position, newPos) > 0.75f)
+        {
+            //Debug.Log(Vector3.Distance(transform.position, newPos));
+            yield return new WaitForEndOfFrame(); ;
+        }
+        newCover.taken = false;
+        statemachine.GoToState(this, "AlertState");
     }
 
-    GameObject SeeActor(Vector3 fromWhere)
+
+    public GameObject SeeActor(Vector3 fromWhere)
     {
         Vector3 startPos = fromWhere + Vector3.up;
         Vector3 direction = player.position - startPos;
@@ -189,42 +163,6 @@ public class Enemy : Actor
             }
         }
         return null;
-    }
-
-    IEnumerator SearchCover()
-    {
-        Cover[] availableCovers = FindObjectsOfType<Cover>();
-        if (availableCovers.Length == 0)
-        {
-            currentState = EnemyState.alert;
-            yield break;
-        }
-        Cover newCover = availableCovers[Random.Range(0, availableCovers.Length)];
-        if (AvailableCover(availableCovers) == false)
-        {
-            currentState = EnemyState.alert;
-            yield break;
-        }
-        while (newCover.taken)
-        {
-            newCover = availableCovers[Random.Range(0, availableCovers.Length)];
-            yield return new WaitForSeconds(0.1f);
-        }
-        newCover.taken = true;
-
-        Vector3 newPos = newCover.transform.position;
-        agent.SetDestination(newPos);
-        anim.SetTrigger("GoToCover");
-        agent.speed = 3f;
-
-        while (Vector3.Distance(transform.position, newPos) > 0.75f)
-        {
-            Debug.Log(Vector3.Distance(transform.position, newPos));
-            yield return new WaitForEndOfFrame(); ;
-        }
-        newCover.taken = false;
-        anim.SetTrigger("ExitCover");
-        currentState = EnemyState.alert;
     }
 
     bool IsCoverSafe(Vector3 coverPosition)
@@ -256,21 +194,23 @@ public class Enemy : Actor
 
     public void PlayerInSight(Collider other)
     {
-        if (currentState == EnemyState.patrol || currentState == EnemyState.investigating)
+        if (statemachine.IsInState("PatrolState") || statemachine.IsInState("InvestigationState"))
         {
             FPSPlayer p = other.GetComponent<FPSPlayer>();
             if (p)
             {
                 if (SeeActor(transform.position + eyeOffset))
                 {
-                    searchBox.enabled = false;
-                    anim.SetBool("Walking", false);
-                    currentState = EnemyState.alert;
-                    agent.SetDestination(transform.position);
+                    statemachine.GoToState(this, "AlertState");
                     GunShotAlert();
                 }
             }
         }
+    }
+
+    public void ChangeState(State newState)
+    {
+        currentState = newState;
     }
 
 }
