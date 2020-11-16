@@ -18,7 +18,7 @@ public class InvestigationState : State
 
     public override void StateUpdate(Enemy e)
     {
-        if (Vector3.Distance(e.playerLastPosition, e.transform.position) < 1.5f)
+        if (Vector3.Distance(e.playerLastPosition, e.transform.position) < 2)
         {
             e.anim.SetBool("Walking", false);
         }
