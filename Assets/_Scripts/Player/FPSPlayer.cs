@@ -22,7 +22,8 @@ public class FPSPlayer : Actor
     [Header("RayCast Settings")]
     [SerializeField] bool useRayCasting;    // ENABLED THE USE OF RAYCAST IN THE FPSCAMERA SCRIPT
     public float rangeCameraRay = 4;
-    
+
+    private int footStepInterval;
     FPSCamera FPSCamera;
     UserInterfaceManager uim;
     CharacterController cc;
@@ -70,6 +71,13 @@ public class FPSPlayer : Actor
             hands.SetBool("Sprinting", true);
             ySpeed = (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
             xSpeed = (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime);
+            footStepInterval++;
+            if (footStepInterval > 25)
+            {
+                footSource.clip = footsteps[Random.Range(0, footsteps.Length)];
+                footSource.Play();
+                footStepInterval = 0;
+            }
         }
         else
         {
