@@ -346,7 +346,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bdfffa09ae08c2c418d47cfaa30edad9, type: 3}
   footSource: {fileID: 2223553930294677470}
   currentState: 0
-  coverChance: 0
+  coverChance: 50
   reactionTime: 1
   maxPatience: 2
   weapon: {fileID: 2223553929235503661}
@@ -1036,7 +1036,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2223553929235503659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0957, z: 0.761}
+  m_LocalPosition: {x: -0.198, y: 0.097, z: -0.074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4244443722599304080}
