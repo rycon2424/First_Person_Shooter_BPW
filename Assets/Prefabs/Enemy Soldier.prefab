@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 2222598214466052069}
   - component: {fileID: 2222598214466052070}
   - component: {fileID: 2222598214466052071}
+  - component: {fileID: 1838104171}
   m_Layer: 0
   m_Name: Enemy Soldier
   m_TagString: Humanoid
@@ -360,13 +361,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 1.41
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.74, z: 0}
 --- !u!195 &2222598214466052071
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -389,6 +390,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1838104171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222598214466052068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.0124116, y: 5, z: 20.90061}
+  m_Center: {x: 0.080723405, y: 1, z: 9.450281}
 --- !u!1 &2222600052964246512
 GameObject:
   m_ObjectHideFlags: 0
@@ -8825,9 +8839,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2218878473659221976}
+  - component: {fileID: 491793387}
+  - component: {fileID: 491793386}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Humanoid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8849,6 +8865,36 @@ Transform:
   m_Father: {fileID: 2218741515573253784}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &491793387
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2224390229259449542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.17
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &491793386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2224390229259449542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e9bc8d0ee344244b7f362bfc0dfb29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  isAlive: 1
+  footsteps: []
+  footSource: {fileID: 0}
+  e: {fileID: 2222598214466052069}
 --- !u!1 &2224392823426740780
 GameObject:
   m_ObjectHideFlags: 0

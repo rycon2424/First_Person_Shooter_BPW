@@ -14368,7 +14368,7 @@ MonoBehaviour:
   primary: 1
   auto: 1
   damage: 19
-  alertSoundRange: 0
+  alertSoundRange: 10
   inaccuracy: 1
   fireRate: 0.2
   muzzleFlash: {fileID: 9186267930857930933}
@@ -19774,7 +19774,7 @@ MonoBehaviour:
   primary: 1
   auto: 1
   damage: 24
-  alertSoundRange: 0
+  alertSoundRange: 30
   inaccuracy: 5
   fireRate: 0.1
   muzzleFlash: {fileID: 2798290664605205231}
@@ -20460,7 +20460,7 @@ MonoBehaviour:
   primary: 1
   auto: 1
   damage: 30
-  alertSoundRange: 0
+  alertSoundRange: 40
   inaccuracy: 6
   fireRate: 0.125
   muzzleFlash: {fileID: 9186267931670886715}
@@ -21301,7 +21301,7 @@ MonoBehaviour:
   primary: 1
   auto: 1
   damage: 12
-  alertSoundRange: 0
+  alertSoundRange: 30
   inaccuracy: 10
   fireRate: 0.05
   muzzleFlash: {fileID: 9186267930857930933}
@@ -25705,7 +25705,7 @@ MonoBehaviour:
   primary: 1
   auto: 0
   damage: 10
-  alertSoundRange: 0
+  alertSoundRange: 20
   inaccuracy: 3
   fireRate: 0.035
   muzzleFlash: {fileID: 9186267932281329083}
@@ -38440,6 +38440,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   isAlive: 1
+  footsteps: []
+  footSource: {fileID: 0}
   moveSpeed: 8
   mouseSensitivityX: 300
   mouseSensitivityY: 1.5

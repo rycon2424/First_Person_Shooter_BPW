@@ -5,19 +5,23 @@ using UnityEngine.AI;
 
 public class Enemy : Actor
 {
-    public enum EnemyState {patrol, alert, investigating, cover}
+    public enum EnemyState { patrol, alert, investigating, cover }
     public EnemyState currentState;
+    [Space]
+    [Range(0, 100)] public int coverChance;
     public float reactionTime;
     public float maxPatience;
+    [Space]
     public Weapon weapon;
-    public Vector3 playerLastPosition;
 
+    private Vector3 playerLastPosition;
     private NavMeshAgent agent;
     private Animator anim;
     private Transform player;
     private FPSPlayer fpsPlayer;
     private bool shooting;
     private bool waitingForPatience;
+    private MeshCollider searchBox;
 
     void Start()
     {
@@ -25,8 +29,9 @@ public class Enemy : Actor
         agent = GetComponent<NavMeshAgent>();
         fpsPlayer = FindObjectOfType<FPSPlayer>();
         player = fpsPlayer.transform;
+        searchBox = GetComponentInChildren<MeshCollider>();
     }
-    
+
     void Update()
     {
         if (fpsPlayer.isAlive == false || isAlive == false)
@@ -67,9 +72,7 @@ public class Enemy : Actor
         }
         if (currentState == EnemyState.patrol)
         {
-            currentState = EnemyState.cover;
-            StartCoroutine(SearchCover());
-            anim.SetTrigger("EnterCombat");
+            GunShotAlert();
         }
         if (currentState == EnemyState.alert)
         {
@@ -81,9 +84,24 @@ public class Enemy : Actor
         }
     }
 
+    public void GunShotAlert()
+    {
+        int chance = Random.Range(0, 101);
+        if (chance <= coverChance)
+        {
+            currentState = EnemyState.cover;
+            StartCoroutine(SearchCover());
+        }
+        else
+        {
+            currentState = EnemyState.alert;
+            anim.SetTrigger("EnterCombat");
+        }
+    }
+
     void Patrol()
     {
-        
+
     }
 
     FPSPlayer p;
@@ -117,17 +135,6 @@ public class Enemy : Actor
         {
             anim.SetBool("Walking", false);
         }
-        GameObject target = SeeActor(transform.position);
-        if (target)
-        {
-            p = target.GetComponent<FPSPlayer>();
-            if (p)
-            {
-                anim.SetBool("Walking", false);
-                currentState = EnemyState.alert;
-                agent.SetDestination(transform.position);
-            }
-        }
     }
 
     IEnumerator Patience()
@@ -138,6 +145,7 @@ public class Enemy : Actor
             anim.SetBool("Walking", true);
             agent.speed = 1.5f;
             agent.SetDestination(playerLastPosition);
+            searchBox.enabled = true;
             currentState = EnemyState.investigating;
         }
     }
@@ -212,7 +220,7 @@ public class Enemy : Actor
         while (Vector3.Distance(transform.position, newPos) > 0.75f)
         {
             Debug.Log(Vector3.Distance(transform.position, newPos));
-            yield return new WaitForEndOfFrame();;
+            yield return new WaitForEndOfFrame(); ;
         }
         newCover.taken = false;
         anim.SetTrigger("ExitCover");
@@ -244,6 +252,25 @@ public class Enemy : Actor
             }
         }
         return false;
+    }
+
+    public void PlayerInSight(Collider other)
+    {
+        if (currentState == EnemyState.patrol || currentState == EnemyState.investigating)
+        {
+            FPSPlayer p = other.GetComponent<FPSPlayer>();
+            if (p)
+            {
+                if (SeeActor(transform.position))
+                {
+                    searchBox.enabled = false;
+                    anim.SetBool("Walking", false);
+                    currentState = EnemyState.alert;
+                    agent.SetDestination(transform.position);
+                    GunShotAlert();
+                }
+            }
+        }
     }
 
 }

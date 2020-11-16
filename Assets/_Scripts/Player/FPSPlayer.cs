@@ -140,6 +140,7 @@ public class FPSPlayer : Actor
         currentWeapon.Shoot();
         currentWeapon.ammo--;
         uim.UpdateAmmo(currentWeapon.ammo);
+        GunAlert(currentWeapon.alertSoundRange);
     }
 
     public void GrabNewWeapon(Weapon newWeap)
@@ -229,6 +230,37 @@ public class FPSPlayer : Actor
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+    }
+
+    void GunAlert(float alertRange)
+    {
+        List<Enemy> notAlertedEnemies = new List<Enemy>();
+        foreach (var enemy in enemiesOnMap)
+        {
+            if (enemy.currentState == Enemy.EnemyState.patrol)
+            {
+                if (enemy.isAlive == true)
+                {
+                    if (Vector3.Distance(transform.position, enemy.transform.position) < alertRange)
+                    {
+                        notAlertedEnemies.Add(enemy);
+                    }
+                }
+            }
+        }
+        if (notAlertedEnemies.Count > 0)
+        {
+            StartCoroutine(AlertEnemies(notAlertedEnemies));
+        }
+    }
+
+    IEnumerator AlertEnemies(List<Enemy> enemiesToAlert)
+    {
+        foreach (var e in enemiesToAlert)
+        {
+            e.GunShotAlert();
+            yield return new WaitForEndOfFrame();
+        }
     }
 
 }
