@@ -26,12 +26,14 @@ public class FPSPlayer : Actor
     FPSCamera FPSCamera;
     UserInterfaceManager uim;
     CharacterController cc;
+    Enemy[] enemiesOnMap;
 
     void Start()
     {
         FPSCamera = FindObjectOfType<FPSCamera>();  // FINDING THE FPSCAMERA SCRIPT TO ACCESS THE RAYCAST FUNCTION
         cc = GetComponent<CharacterController>();
         uim = GetComponent<UserInterfaceManager>();
+        enemiesOnMap = FindObjectsOfType<Enemy>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         if (currentWeapon)

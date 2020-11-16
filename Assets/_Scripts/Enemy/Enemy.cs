@@ -33,6 +33,7 @@ public class Enemy : Actor
         {
             return;
         }
+        weapon.transform.LookAt(player);
         switch (currentState)
         {
             case EnemyState.patrol:
@@ -112,7 +113,6 @@ public class Enemy : Actor
 
     void Investigating()
     {
-        Debug.Log(Vector3.Distance(playerLastPosition, transform.position));
         if (Vector3.Distance(playerLastPosition, transform.position) < 1.5f)
         {
             anim.SetBool("Walking", false);
@@ -165,7 +165,7 @@ public class Enemy : Actor
             }
             else
             {
-                weapon.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5);
+                weapon.transform.LookAt(player);
                 weapon.Shoot();
             }
         }
@@ -211,6 +211,7 @@ public class Enemy : Actor
 
         while (Vector3.Distance(transform.position, newPos) > 0.75f)
         {
+            Debug.Log(Vector3.Distance(transform.position, newPos));
             yield return new WaitForEndOfFrame();;
         }
         newCover.taken = false;
