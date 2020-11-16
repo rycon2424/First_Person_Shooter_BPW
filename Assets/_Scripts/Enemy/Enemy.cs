@@ -11,6 +11,7 @@ public class Enemy : Actor
     [Range(0, 100)] public int coverChance;
     public float reactionTime;
     public float maxPatience;
+    public Vector3 eyeOffset;
     [Space]
     public Weapon weapon;
 
@@ -101,7 +102,7 @@ public class Enemy : Actor
     FPSPlayer p;
     void Alert()
     {
-        GameObject target = SeeActor(transform.position);
+        GameObject target = SeeActor(transform.position + eyeOffset);
         if (target)
         {
             p = target.GetComponent<FPSPlayer>();
@@ -256,7 +257,7 @@ public class Enemy : Actor
             FPSPlayer p = other.GetComponent<FPSPlayer>();
             if (p)
             {
-                if (SeeActor(transform.position))
+                if (SeeActor(transform.position + eyeOffset))
                 {
                     searchBox.enabled = false;
                     anim.SetBool("Walking", false);

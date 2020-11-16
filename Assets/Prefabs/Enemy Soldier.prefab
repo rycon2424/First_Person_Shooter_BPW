@@ -350,6 +350,7 @@ MonoBehaviour:
   coverChance: 50
   reactionTime: 1
   maxPatience: 2
+  eyeOffset: {x: 0, y: 0.65, z: 0}
   weapon: {fileID: 2223553929235503661}
 --- !u!143 &2222598214466052070
 CharacterController:
@@ -362,7 +363,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.41
+  m_Height: 1.4
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
