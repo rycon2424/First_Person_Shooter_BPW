@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Enemy : Actor
 {
     public State currentState;
+    public GameObject radar;
     [Header("Stats")]
     [Range(0, 100)] public int coverChance;
     public float reactionTime;
@@ -162,7 +163,11 @@ public class Enemy : Actor
         {
             if (hit.collider.CompareTag("Humanoid"))
             {
-                return hit.collider.gameObject;
+                FPSPlayer t = hit.collider.GetComponent<FPSPlayer>();
+                if (t)
+                {
+                    return hit.collider.gameObject;
+                }
             }
         }
         return null;
@@ -199,14 +204,10 @@ public class Enemy : Actor
     {
         if (statemachine.IsInState("PatrolState") || statemachine.IsInState("InvestigationState"))
         {
-            FPSPlayer p = other.GetComponent<FPSPlayer>();
-            if (p)
+            if (SeeActor(transform.position + eyeOffset))
             {
-                if (SeeActor(transform.position + eyeOffset))
-                {
-                    statemachine.GoToState(this, "AlertState");
-                    GunShotAlert();
-                }
+                statemachine.GoToState(this, "AlertState");
+                GunShotAlert();
             }
         }
     }

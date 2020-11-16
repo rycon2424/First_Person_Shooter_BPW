@@ -10,6 +10,7 @@ public class DeathState : State
         e.isAlive = false;
         e.GetComponent<CharacterController>().enabled = false;
         e.agent.SetDestination(e.transform.position);
+        e.radar.SetActive(false);
     }
 
     public override void OnStateExit(Enemy e)

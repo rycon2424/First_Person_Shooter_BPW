@@ -346,6 +346,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2255e9dbab2372c4b91adf92c7988283, type: 3}
   - {fileID: 8300000, guid: bdfffa09ae08c2c418d47cfaa30edad9, type: 3}
   footSource: {fileID: 2223553930294677470}
+  radar: {fileID: 2223553929942159864}
   coverChance: 100
   reactionTime: 1
   maxPatience: 2
@@ -5815,7 +5816,7 @@ GameObject:
   - component: {fileID: 2223553929942159867}
   - component: {fileID: 2223553929942159866}
   m_Layer: 8
-  m_Name: Cylinder
+  m_Name: Radar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
