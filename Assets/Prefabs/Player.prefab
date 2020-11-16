@@ -4781,7 +4781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146519765}
   m_LocalRotation: {x: 0.0059269955, y: 0.011998835, z: 0.0041701393, w: 0.9999018}
-  m_LocalPosition: {x: -0.0131, y: 0.0662, z: 0.2221}
+  m_LocalPosition: {x: -0.008, y: 0.064, z: 0.429}
   m_LocalScale: {x: 0.8620687, y: 0.8620689, z: 0.8620689}
   m_Children: []
   m_Father: {fileID: 9183764081402579827}
@@ -23672,6 +23672,85 @@ Transform:
   m_Father: {fileID: 8666847626900316890}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9044402776308065327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9047707347030209227}
+  - component: {fileID: 9076875074294751607}
+  - component: {fileID: 9067067287233358657}
+  m_Layer: 0
+  m_Name: SM_Wep_Mod_Silencer_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9047707347030209227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9044402776308065327}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0558, z: 0.2169}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9183764081402579827}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &9076875074294751607
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9044402776308065327}
+  m_Mesh: {fileID: 4300000, guid: ebfac3bedb793804f8afdd9bc29812fc, type: 3}
+--- !u!23 &9067067287233358657
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9044402776308065327}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 113e25a934336cf4b9b21fda3170199d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &9185155735777730244
 GameObject:
   m_ObjectHideFlags: 0
@@ -23865,6 +23944,7 @@ Transform:
   - {fileID: 9182101253708674671}
   - {fileID: 9181796812646640187}
   - {fileID: 1146519766}
+  - {fileID: 9047707347030209227}
   m_Father: {fileID: 954309770}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 180.685, y: 179.368, z: 179.53}
@@ -23891,8 +23971,8 @@ MonoBehaviour:
   weaponName: SIG Sauer
   primary: 0
   auto: 0
-  damage: 4
-  alertSoundRange: 0
+  damage: 5
+  alertSoundRange: 5
   inaccuracy: 2
   fireRate: 0.15
   muzzleFlash: {fileID: 1146519768}
@@ -23955,7 +24035,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.1
-  m_Pitch: 1
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -24653,8 +24733,8 @@ MonoBehaviour:
   weaponName: Colt45
   primary: 0
   auto: 0
-  damage: 15
-  alertSoundRange: 0
+  damage: 35
+  alertSoundRange: 40
   inaccuracy: 1
   fireRate: 1
   muzzleFlash: {fileID: 387192983}
@@ -25099,7 +25179,7 @@ MonoBehaviour:
   primary: 0
   auto: 0
   damage: 5
-  alertSoundRange: 0
+  alertSoundRange: 20
   inaccuracy: 3
   fireRate: 0.15
   muzzleFlash: {fileID: 1836994536}
