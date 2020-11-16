@@ -71,13 +71,6 @@ public class FPSPlayer : Actor
             hands.SetBool("Sprinting", true);
             ySpeed = (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
             xSpeed = (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime);
-            footStepInterval++;
-            if (footStepInterval > 25)
-            {
-                footSource.clip = footsteps[Random.Range(0, footsteps.Length)];
-                footSource.Play();
-                footStepInterval = 0;
-            }
         }
         else
         {
@@ -93,6 +86,20 @@ public class FPSPlayer : Actor
         cc.Move(motion);
 
         transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX * Time.deltaTime);
+    }
+
+    private void FixedUpdate()
+    {
+        if (hands.GetBool("Sprinting") == true)
+        {
+            footStepInterval++;
+            if (footStepInterval > 12)
+            {
+                footSource.clip = footsteps[Random.Range(0, footsteps.Length)];
+                footSource.Play();
+                footStepInterval = 0;
+            }
+        }
     }
 
     void Combat()
