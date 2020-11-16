@@ -91,16 +91,14 @@ public class Enemy : Actor
         agent.SetDestination(transform.position);
         anim.SetBool("Walking", false);
         waitingForPatience = false;
-        if (chance <= coverChance)
+
+        if (chance <= coverChance && currentState == EnemyState.patrol)
         {
             currentState = EnemyState.cover;
             StartCoroutine(SearchCover());
         }
-        else
-        {
-            currentState = EnemyState.alert;
-            anim.SetTrigger("EnterCombat");
-        }
+        currentState = EnemyState.alert;
+        anim.SetTrigger("EnterCombat");
     }
 
     void Patrol()

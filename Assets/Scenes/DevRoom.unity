@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b624560c3a1d764abc8497b423d3429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taken: 1
+  taken: 0
 --- !u!1001 &2096037887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4978,6 +4978,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Soldier
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222598214466052069, guid: a0f0d1f62b0248b4cbe24d76cb4e05ac,
+        type: 3}
+      propertyPath: coverChance
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f0d1f62b0248b4cbe24d76cb4e05ac, type: 3}
