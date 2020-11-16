@@ -202,12 +202,16 @@ public class Enemy : Actor
 
     public void PlayerInSight(Collider other)
     {
-        if (statemachine.IsInState("PatrolState") || statemachine.IsInState("InvestigationState"))
+        FPSPlayer temp = other.GetComponent<FPSPlayer>();
+        if (temp)
         {
-            if (SeeActor(transform.position + eyeOffset))
+            if (statemachine.IsInState("PatrolState") || statemachine.IsInState("InvestigationState"))
             {
-                statemachine.GoToState(this, "AlertState");
-                GunShotAlert();
+                if (SeeActor(transform.position + eyeOffset))
+                {
+                    statemachine.GoToState(this, "AlertState");
+                    GunShotAlert();
+                }
             }
         }
     }

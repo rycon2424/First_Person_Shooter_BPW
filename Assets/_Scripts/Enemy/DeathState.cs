@@ -11,6 +11,7 @@ public class DeathState : State
         e.GetComponent<CharacterController>().enabled = false;
         e.agent.SetDestination(e.transform.position);
         e.radar.SetActive(false);
+        e.searchBox.gameObject.SetActive(false);
     }
 
     public override void OnStateExit(Enemy e)

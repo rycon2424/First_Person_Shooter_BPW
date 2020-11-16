@@ -8,7 +8,6 @@ public class AlertState : State
     {
         e.searchBox.transform.localScale = e.viewDistanceAlert;
         e.playerLastPosition = e.player.position;
-        e.searchBox.enabled = false;
         e.anim.SetBool("Walking", false);
         e.agent.SetDestination(e.transform.position);
         e.anim.SetTrigger("EnterCombat");

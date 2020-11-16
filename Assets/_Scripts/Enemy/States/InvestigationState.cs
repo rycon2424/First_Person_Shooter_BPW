@@ -9,7 +9,6 @@ public class InvestigationState : State
         e.anim.SetBool("Walking", true);
         e.agent.speed = 1.5f;
         e.agent.SetDestination(e.playerLastPosition);
-        e.searchBox.enabled = true;
     }
 
     public override void OnStateExit(Enemy e)
