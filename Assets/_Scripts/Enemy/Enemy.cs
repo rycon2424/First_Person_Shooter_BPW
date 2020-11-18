@@ -90,7 +90,7 @@ public class Enemy : Actor
     {
         int chance = Random.Range(0, 101);
         waitingForPatience = false;
-        if (chance <= coverChance && statemachine.IsInState("PatrolState"))
+        if (chance < coverChance && statemachine.IsInState("PatrolState"))
         {
             StartCoroutine(SearchCover());
             return;
@@ -213,6 +213,7 @@ public class Enemy : Actor
                 {
                     statemachine.GoToState(this, "AlertState");
                     GunShotAlert();
+                    Debug.Log("playerinsight");
                 }
             }
         }

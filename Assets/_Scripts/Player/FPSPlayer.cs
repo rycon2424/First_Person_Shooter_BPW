@@ -260,6 +260,7 @@ public class FPSPlayer : Actor
         if (health <= 0)
         {
             isAlive = false;
+            sprinting = false;
             weaponHands.SetActive(false);
             fpsCam.Death();
             gm.GameOver();

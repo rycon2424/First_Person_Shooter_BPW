@@ -23,7 +23,6 @@ public class EnemyVision : MonoBehaviour
                 {
                     e.GunShotAlert();
                     confirmedDeath.Add(ally);
-                    //e.statemachine.GoToState(e, "AlertState");
                 }
             }
         }

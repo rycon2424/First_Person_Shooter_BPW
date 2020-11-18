@@ -25,5 +25,6 @@ public class InvestigationState : State
 
     public override void StateLateUpdate(Enemy e)
     {
+
     }
 }
