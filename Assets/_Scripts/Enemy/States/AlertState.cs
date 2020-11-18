@@ -25,8 +25,11 @@ public class AlertState : State
             e.tempPlayer = target.GetComponent<FPSPlayer>();
             if (e.tempPlayer)
             {
-                e.waitingForPatience = false;
-                StartShooting(e);
+                if (e.isAlive)
+                {
+                    e.waitingForPatience = false;
+                    StartShooting(e);
+                }
             }
         }
         else
