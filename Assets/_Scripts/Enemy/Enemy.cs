@@ -9,15 +9,15 @@ public class Enemy : Actor
     public GameObject radar;
     [Header("Stats")]
     [Range(0, 100)] public int coverChance;
+    public bool investigator; // if this enemy investigates or hold position
     public float reactionTime;
     public float maxPatience;
     public Vector3 viewDistancePatrol = new Vector3(5, 1, 1);
     public Vector3 viewDistanceAlert = new Vector3(7, 2, 2);
     [Space]
     public Weapon weapon;
-    [Space]
-    public bool playerInSight;
 
+    [HideInInspector] public bool playerInSight;
     [HideInInspector] public StateMachine statemachine;
     [HideInInspector] public Vector3 playerLastPosition;
     [HideInInspector] public NavMeshAgent agent;
@@ -90,12 +90,15 @@ public class Enemy : Actor
 
     public void GunShotAlert()
     {
-        int chance = Random.Range(0, 101);
-        waitingForPatience = false;
-        if (chance < coverChance && statemachine.IsInState("PatrolState"))
+        if (investigator)
         {
-            StartCoroutine(SearchCover());
-            return;
+            int chance = Random.Range(0, 101);
+            waitingForPatience = false;
+            if (chance < coverChance && statemachine.IsInState("PatrolState"))
+            {
+                StartCoroutine(SearchCover());
+                return;
+            }
         }
         statemachine.GoToState(this, "AlertState");
     }
@@ -108,9 +111,10 @@ public class Enemy : Actor
     IEnumerator Patience()
     {
         yield return new WaitForSeconds(maxPatience);
-        if (tempPlayer == null && !statemachine.IsInState("InvestigationState"))
+        if (tempPlayer == null && !statemachine.IsInState("InvestigationState") && !statemachine.IsInState("DeathState"))
         {
             statemachine.GoToState(this, "InvestigationState");
+            maxPatience = 0;
         }
     }
 

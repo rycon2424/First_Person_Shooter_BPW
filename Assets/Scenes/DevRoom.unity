@@ -2394,12 +2394,17 @@ PrefabInstance:
     - target: {fileID: 2445853949212091584, guid: 64b3d04cfa12ac943bda238e0311004e,
         type: 3}
       propertyPath: coverChance
-      value: 100
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2445853949212091584, guid: 64b3d04cfa12ac943bda238e0311004e,
         type: 3}
       propertyPath: reactionTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2445853949212091584, guid: 64b3d04cfa12ac943bda238e0311004e,
+        type: 3}
+      propertyPath: investigator
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2445853949212091585, guid: 64b3d04cfa12ac943bda238e0311004e,
         type: 3}

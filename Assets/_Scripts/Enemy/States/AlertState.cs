@@ -12,7 +12,6 @@ public class AlertState : State
         e.agent.SetDestination(e.transform.position);
         e.anim.SetTrigger("EnterCombat");
         e.shooting = false;
-        e.maxPatience = 0;
     }
 
     public override void OnStateExit(Enemy e)
@@ -39,11 +38,18 @@ public class AlertState : State
         {
             e.shooting = false;
             e.tempPlayer = null;
-            if (e.waitingForPatience == false)
+            if (e.waitingForPatience == false && e.investigator)
             {
                 e.StartRoutine("Patience");
                 e.waitingForPatience = true;
             }
+        }
+        if (!e.investigator)
+        {
+            var lookPos = e.playerLastPosition - e.transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            e.transform.rotation = Quaternion.Slerp(e.transform.rotation, rotation, Time.deltaTime * 5);
         }
     }
 
