@@ -29,6 +29,7 @@ public class FPSPlayer : Actor
     CharacterController cc;
     Enemy[] enemiesOnMap;
     GameManager gm;
+    bool sprinting;
 
     void Start()
     {
@@ -74,16 +75,17 @@ public class FPSPlayer : Actor
         Vector3 xSpeed;
         if (Input.GetKey(KeyCode.LeftShift) && reloading == false)
         {
-            hands.SetBool("Sprinting", true);
+            sprinting = true;
             ySpeed = (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
             xSpeed = (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime);
         }
         else
         {
-            hands.SetBool("Sprinting", false);
+            sprinting = false;
             ySpeed = (transform.forward * Input.GetAxis("Vertical") * (moveSpeed / 3) * Time.deltaTime);
             xSpeed = (transform.right * Input.GetAxis("Horizontal") * (moveSpeed / 3) * Time.deltaTime);
         }
+        hands.SetBool("Sprinting", sprinting);
 
         Vector3 gravityCalculation = new Vector3(0, gravity, 0);
 
@@ -96,7 +98,7 @@ public class FPSPlayer : Actor
 
     private void FixedUpdate()
     {
-        if (hands.GetBool("Sprinting") == true)
+        if (sprinting == true)
         {
             footStepInterval++;
             if (footStepInterval > 12)
