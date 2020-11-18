@@ -11,16 +11,19 @@ public class AlertState : State
         e.anim.SetBool("Walking", false);
         e.agent.SetDestination(e.transform.position);
         e.anim.SetTrigger("EnterCombat");
+        e.shooting = false;
+        e.maxPatience = 0;
     }
 
     public override void OnStateExit(Enemy e)
     {
+
     }
     
     public override void StateUpdate(Enemy e)
     {
         GameObject target = e.SeeActor(e.transform.position + e.eyeOffset);
-        if (target)
+        if (target && e.playerInSight == true)
         {
             e.tempPlayer = target.GetComponent<FPSPlayer>();
             if (e.tempPlayer)

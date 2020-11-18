@@ -15,6 +15,10 @@ public class PatrolState : State
 
     public override void StateUpdate(Enemy e)
     {
+        if (e.playerInSight == true)
+        {
+            e.GunShotAlert();
+        }
     }
 
     public override void StateLateUpdate(Enemy e)

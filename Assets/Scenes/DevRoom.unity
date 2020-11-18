@@ -2394,7 +2394,7 @@ PrefabInstance:
     - target: {fileID: 2445853949212091584, guid: 64b3d04cfa12ac943bda238e0311004e,
         type: 3}
       propertyPath: coverChance
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2445853949212091584, guid: 64b3d04cfa12ac943bda238e0311004e,
         type: 3}

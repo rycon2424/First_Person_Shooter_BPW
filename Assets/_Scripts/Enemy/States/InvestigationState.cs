@@ -21,6 +21,10 @@ public class InvestigationState : State
         {
             e.anim.SetBool("Walking", false);
         }
+        if (e.playerInSight == true)
+        {
+            e.GunShotAlert();
+        }
     }
 
     public override void StateLateUpdate(Enemy e)

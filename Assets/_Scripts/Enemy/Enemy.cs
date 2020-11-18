@@ -15,6 +15,8 @@ public class Enemy : Actor
     public Vector3 viewDistanceAlert = new Vector3(7, 2, 2);
     [Space]
     public Weapon weapon;
+    [Space]
+    public bool playerInSight;
 
     [HideInInspector] public StateMachine statemachine;
     [HideInInspector] public Vector3 playerLastPosition;
@@ -207,13 +209,15 @@ public class Enemy : Actor
         FPSPlayer temp = other.GetComponent<FPSPlayer>();
         if (temp)
         {
-            if (statemachine.IsInState("PatrolState") || statemachine.IsInState("InvestigationState"))
+            if (!statemachine.IsInState("DeathState"))
             {
                 if (SeeActor(transform.position + eyeOffset))
                 {
-                    statemachine.GoToState(this, "AlertState");
-                    GunShotAlert();
-                    Debug.Log("playerinsight");
+                    playerInSight = true;
+                }
+                else
+                {
+                    playerInSight = false;
                 }
             }
         }
