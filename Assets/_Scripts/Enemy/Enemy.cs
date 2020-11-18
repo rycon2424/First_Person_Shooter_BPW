@@ -27,11 +27,13 @@ public class Enemy : Actor
     [HideInInspector] public MeshCollider searchBox;
     [HideInInspector] public FPSPlayer tempPlayer;
     [HideInInspector] public Vector3 eyeOffset;
+    [HideInInspector] public GameManager gm;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        gm = FindObjectOfType<GameManager>();
         fpsPlayer = FindObjectOfType<FPSPlayer>();
         player = fpsPlayer.transform;
         searchBox = GetComponentInChildren<MeshCollider>();

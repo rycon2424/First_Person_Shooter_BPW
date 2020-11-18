@@ -48,4 +48,11 @@ public class FPSCamera : MonoBehaviour
         }
     }
 
+    public void Death()
+    {
+        GetComponent<BoxCollider>().enabled = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        this.enabled = false;
+    }
+
 }

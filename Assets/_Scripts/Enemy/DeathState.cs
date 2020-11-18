@@ -12,6 +12,10 @@ public class DeathState : State
         e.agent.SetDestination(e.transform.position);
         e.radar.SetActive(false);
         e.searchBox.gameObject.SetActive(false);
+        if (e.gm)
+        {
+            e.gm.UpdateManager();
+        }
     }
 
     public override void OnStateExit(Enemy e)

@@ -24,16 +24,18 @@ public class FPSPlayer : Actor
     public float rangeCameraRay = 4;
 
     private int footStepInterval;
-    FPSCamera FPSCamera;
+    FPSCamera fpsCam;
     UserInterfaceManager uim;
     CharacterController cc;
     Enemy[] enemiesOnMap;
+    GameManager gm;
 
     void Start()
     {
-        FPSCamera = FindObjectOfType<FPSCamera>();  // FINDING THE FPSCAMERA SCRIPT TO ACCESS THE RAYCAST FUNCTION
+        fpsCam = FindObjectOfType<FPSCamera>();  // FINDING THE FPSCAMERA SCRIPT TO ACCESS THE RAYCAST FUNCTION
         cc = GetComponent<CharacterController>();
         uim = GetComponent<UserInterfaceManager>();
+        gm = FindObjectOfType<GameManager>();
         enemiesOnMap = FindObjectsOfType<Enemy>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -51,9 +53,13 @@ public class FPSPlayer : Actor
 
     void Update()
     {
+        if (!isAlive)
+        {
+            return;
+        }
         if (useRayCasting)
         {
-            FPSCamera.Raycast();
+            fpsCam.Raycast();
         }
         if (currentWeapon)
         {
@@ -245,6 +251,16 @@ public class FPSPlayer : Actor
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        if (!isAlive)
+        {
+            return;
+        }
+        if (health <= 0)
+        {
+            isAlive = false;
+            fpsCam.Death();
+            gm.GameOver();
+        }
         uim.UpdateHealth(health);
     }
 
