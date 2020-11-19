@@ -64,18 +64,24 @@ public class FPSPlayer : Actor
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             mouseSensitivityX += 10;
-            mouseSensitivityY += 0.025f;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             mouseSensitivityX -= 10;
-            mouseSensitivityY -= 0.1f;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            AudioListener.volume += 0.1f;
+            mouseSensitivityY += 0.5f;
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            mouseSensitivityY -= 0.5f;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            AudioListener.volume += 0.1f;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             AudioListener.volume -= 0.1f;
         }
