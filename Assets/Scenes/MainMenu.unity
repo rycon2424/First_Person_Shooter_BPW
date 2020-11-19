@@ -63041,6 +63041,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862407175}
   m_CullTransparentMesh: 0
+--- !u!1 &1864529374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864529376}
+  - component: {fileID: 1864529375}
+  m_Layer: 0
+  m_Name: Theme
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1864529375
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864529374}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 432d77764e26a4f4fb6a27f96d26001d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1864529376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864529374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540.3025, y: 328.56, z: -91.7735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1864529798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66615,50 +66742,50 @@ MonoBehaviour:
     auto: 1
     _lethality: 8
     _loudness: 8
-    _accuracy: 7
+    _accuracy: 8
     _fireRate: 7
-    _ammo: 4
+    _ammo: 8
     weapon: {fileID: 480513333}
   - _name: SMG-Tactical
     auto: 0
-    _lethality: 7
-    _loudness: 6
-    _accuracy: 8
+    _lethality: 6
+    _loudness: 5
+    _accuracy: 9
     _fireRate: 8
-    _ammo: 3
+    _ammo: 6
     weapon: {fileID: 1438685212}
   - _name: Ak-47
     auto: 1
     _lethality: 10
     _loudness: 10
-    _accuracy: 4
+    _accuracy: 5
     _fireRate: 8
-    _ammo: 4
+    _ammo: 8
     weapon: {fileID: 1155998488}
   - _name: M16-S
     auto: 1
-    _lethality: 5
+    _lethality: 7
     _loudness: 2
     _accuracy: 9
     _fireRate: 6
-    _ammo: 2
+    _ammo: 4
     weapon: {fileID: 824099195}
   - _name: Aks
     auto: 0
-    _lethality: 8
+    _lethality: 4
     _loudness: 8
     _accuracy: 1
     _fireRate: 10
-    _ammo: 5
+    _ammo: 6
     weapon: {fileID: 810993959}
   secondaryWeapons:
   - _name: M9 Barreta
     auto: 0
-    _lethality: 3
-    _loudness: 7
-    _accuracy: 7
+    _lethality: 5
+    _loudness: 5
+    _accuracy: 6
     _fireRate: 9
-    _ammo: 3
+    _ammo: 6
     weapon: {fileID: 1466804018}
   - _name: SIG Sauer-S
     auto: 0
@@ -66666,15 +66793,15 @@ MonoBehaviour:
     _loudness: 1
     _accuracy: 9
     _fireRate: 8
-    _ammo: 2
+    _ammo: 4
     weapon: {fileID: 1398705179}
   - _name: Colt45
     auto: 0
     _lethality: 10
-    _loudness: 9
-    _accuracy: 9
+    _loudness: 10
+    _accuracy: 10
     _fireRate: 2
-    _ammo: 2
+    _ammo: 4
     weapon: {fileID: 428351962}
   weaponname: {fileID: 1219398426}
   auto: {fileID: 1387031648}

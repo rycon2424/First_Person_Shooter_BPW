@@ -14376,7 +14376,7 @@ MonoBehaviour:
   aus: {fileID: 9148014842344831744}
   shot: {fileID: 8300000, guid: 044689555eea60644b0d0ace2cecc6cf, type: 3}
   ammo: 30
-  mags: 3
+  mags: 4
   maxInMag: 30
   cooldown: 0
 --- !u!23 &134447119161748730
@@ -19775,14 +19775,14 @@ MonoBehaviour:
   auto: 1
   damage: 24
   alertSoundRange: 30
-  inaccuracy: 2.5
+  inaccuracy: 1.5
   fireRate: 0.1
   muzzleFlash: {fileID: 2798290664605205231}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
   aus: {fileID: 5591420338447385368}
   shot: {fileID: 8300000, guid: 72a2a3c6729ec8c4cb592bdae4f3a614, type: 3}
   ammo: 30
-  mags: 2
+  mags: 4
   maxInMag: 30
   cooldown: 0
 --- !u!23 &3653042538598479536
@@ -20461,14 +20461,14 @@ MonoBehaviour:
   auto: 1
   damage: 30
   alertSoundRange: 40
-  inaccuracy: 4
+  inaccuracy: 2.5
   fireRate: 0.125
   muzzleFlash: {fileID: 9186267931670886715}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
   aus: {fileID: 4635785853544337443}
   shot: {fileID: 8300000, guid: 7c41466d436df054598faf9402e90bc9, type: 3}
   ammo: 30
-  mags: 2
+  mags: 4
   maxInMag: 30
   cooldown: 0
 --- !u!23 &4573831185718270415
@@ -21382,7 +21382,7 @@ MonoBehaviour:
   aus: {fileID: 2096952554215067872}
   shot: {fileID: 8300000, guid: ac2aab8a08d17324491655a9d9856002, type: 3}
   ammo: 20
-  mags: 2
+  mags: 3
   maxInMag: 25
   cooldown: 0
 --- !u!23 &7076655201058707096
@@ -24046,14 +24046,14 @@ MonoBehaviour:
   auto: 0
   damage: 5
   alertSoundRange: 5
-  inaccuracy: 2
+  inaccuracy: 1
   fireRate: 0.15
   muzzleFlash: {fileID: 1146519768}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
   aus: {fileID: 1451944370}
   shot: {fileID: 8300000, guid: 08dba3dc25a3f204bb90871bef111e28, type: 3}
   ammo: 11
-  mags: 5
+  mags: 2
   maxInMag: 11
   cooldown: 0
 --- !u!23 &9164536721899765391
@@ -24806,16 +24806,16 @@ MonoBehaviour:
   weaponName: Colt45
   primary: 0
   auto: 0
-  damage: 35
+  damage: 50
   alertSoundRange: 40
-  inaccuracy: 1
+  inaccuracy: 0.2
   fireRate: 1
   muzzleFlash: {fileID: 387192983}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
   aus: {fileID: 350865487}
   shot: {fileID: 8300000, guid: 61ebe587ba75ba542a78bccc97f76196, type: 3}
   ammo: 8
-  mags: 5
+  mags: 2
   maxInMag: 8
   cooldown: 0
 --- !u!23 &9162755353287481721
@@ -25251,16 +25251,16 @@ MonoBehaviour:
   weaponName: M9 Barreta
   primary: 0
   auto: 0
-  damage: 5
+  damage: 10
   alertSoundRange: 20
-  inaccuracy: 3
+  inaccuracy: 2
   fireRate: 0.15
   muzzleFlash: {fileID: 1836994536}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
   aus: {fileID: 1598113041}
   shot: {fileID: 8300000, guid: c510def35df78a74a8f113db34d1a127, type: 3}
   ammo: 9
-  mags: 5
+  mags: 3
   maxInMag: 9
   cooldown: 0
 --- !u!23 &9164580028623142688
@@ -25854,19 +25854,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716d4f08f9af57542a596fc09c0234ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: SMG
+  weaponName: SMG-Tactical
   primary: 1
   auto: 0
-  damage: 10
+  damage: 20
   alertSoundRange: 20
-  inaccuracy: 2
+  inaccuracy: 1.25
   fireRate: 0.035
   muzzleFlash: {fileID: 9186267932281329083}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
   aus: {fileID: 1940088687184352}
   shot: {fileID: 8300000, guid: e6d4eccb452215e449d4df1c4d37af46, type: 3}
   ammo: 23
-  mags: 1
+  mags: 3
   maxInMag: 25
   cooldown: 0
 --- !u!23 &9164553950753530456
@@ -26398,7 +26398,7 @@ Transform:
   m_GameObject: {fileID: 9186267930631099984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 400, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 3}
+  m_LocalScale: {x: 5, y: 0.5, z: 5}
   m_Children: []
   m_Father: {fileID: 9186267931955677413}
   m_RootOrder: 1
@@ -32647,7 +32647,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 40
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -32761,7 +32761,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9186267931392686883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.66, y: 0.66, z: 0.66}
   m_Children:
   - {fileID: 9186267931330681482}
@@ -32773,7 +32773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0, y: 14}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9186267931392686893

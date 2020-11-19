@@ -5426,8 +5426,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bdfffa09ae08c2c418d47cfaa30edad9, type: 3}
   footSource: {fileID: 2223553930294677470}
   radar: {fileID: 2223553929942159864}
-  coverChance: 100
-  investigator: 0
+  coverChance: 50
+  investigator: 1
   reactionTime: 1
   maxPatience: 2
   viewDistancePatrol: {x: 4, y: 1.5, z: 1.5}
@@ -10913,7 +10913,7 @@ Transform:
   m_GameObject: {fileID: 2223553929942159864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 130.7, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 3}
+  m_LocalScale: {x: 5, y: 0.5, z: 5}
   m_Children: []
   m_Father: {fileID: 2218755094660334088}
   m_RootOrder: 34

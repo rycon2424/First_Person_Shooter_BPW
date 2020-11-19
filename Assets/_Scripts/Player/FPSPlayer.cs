@@ -33,16 +33,6 @@ public class FPSPlayer : Actor
 
     void Start()
     {
-        if (GearInstance.instance != null)
-        {
-            GrabNewWeapon(GearInstance.instance.secondary);
-            GrabNewWeapon(GearInstance.instance.primary);
-            currentWeapon = primary;
-
-            GearInstance.instance.DestroyThis();
-
-            SwitchWeapon(primary);
-        }
         fpsCam = FindObjectOfType<FPSCamera>();  // FINDING THE FPSCAMERA SCRIPT TO ACCESS THE RAYCAST FUNCTION
         cc = GetComponent<CharacterController>();
         uim = GetComponent<UserInterfaceManager>();
@@ -50,6 +40,13 @@ public class FPSPlayer : Actor
         enemiesOnMap = FindObjectsOfType<Enemy>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        if (GearInstance.instance != null)
+        {
+            GrabNewWeapon(GearInstance.instance.secondary);
+            GrabNewWeapon(GearInstance.instance.primary);
+            SwitchWeapon(secondary);
+            SwitchWeapon(primary);
+        }
         if (currentWeapon)
         {
             weaponHands.SetActive(true);
@@ -62,8 +59,31 @@ public class FPSPlayer : Actor
         }
     }
 
+    void Debugging()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            mouseSensitivityX += 10;
+            mouseSensitivityY += 0.025f;
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            mouseSensitivityX -= 10;
+            mouseSensitivityY -= 0.1f;
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            AudioListener.volume += 0.1f;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            AudioListener.volume -= 0.1f;
+        }
+    }
+
     void Update()
     {
+        Debugging();
         if (!isAlive)
         {
             return;
@@ -180,17 +200,7 @@ public class FPSPlayer : Actor
     {
         weaponHands.SetActive(true);
         newWeap.gameObject.SetActive(false);
-        if (newWeap.primary)
-        {
-            primary = newWeap;
-            SwitchWeapon(newWeap);
-        }
-        else
-        {
-            secondary = newWeap;
-            SwitchWeapon(newWeap);
-        }
-        UpdateUI();
+        SwitchWeapon(newWeap);
     }
 
     void SwitchWeapon(Weapon newWeap)
@@ -212,13 +222,21 @@ public class FPSPlayer : Actor
                 {
                     currentWeapon.gameObject.SetActive(false);
                 }
+                if (newWeap.primary)
+                {
+                    primary = newWeap;
+                }
+                else
+                {
+                    secondary = newWeap;
+                }
                 currentWeapon = w;
                 currentWeapon.gameObject.SetActive(true);
                 UpdateUI();
                 return;
             }
         }
-        Debug.LogError("Weapon not found in list");
+        Debug.LogError("Weapon " + newWeap.weaponName + " not found in list");
     }
 
     void UpdateUI()
@@ -259,7 +277,7 @@ public class FPSPlayer : Actor
             sprinting = false;
             weaponHands.SetActive(false);
             fpsCam.Death();
-            gm.GameOver();
+            gm.GameOverLost();
         }
         uim.UpdateHealth(health);
     }

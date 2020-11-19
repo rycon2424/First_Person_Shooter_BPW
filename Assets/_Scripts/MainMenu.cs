@@ -35,7 +35,6 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        //DisplayStats(primaryWeapons[0]);
     }
 
     public void NextMenu(int menu)
