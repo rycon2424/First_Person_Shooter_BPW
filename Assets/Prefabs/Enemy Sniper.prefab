@@ -16565,7 +16565,7 @@ MonoBehaviour:
   weaponName: Sniper
   primary: 1
   auto: 0
-  damage: 25
+  damage: 50
   alertSoundRange: 0
   inaccuracy: 1
   fireRate: 5

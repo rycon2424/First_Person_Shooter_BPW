@@ -5428,7 +5428,7 @@ MonoBehaviour:
   radar: {fileID: 2223553929942159864}
   coverChance: 50
   investigator: 1
-  reactionTime: 1
+  reactionTime: 0.5
   maxPatience: 2
   viewDistancePatrol: {x: 4, y: 1.5, z: 1.5}
   viewDistanceAlert: {x: 7, y: 2, z: 2}
@@ -6152,7 +6152,7 @@ MonoBehaviour:
   weaponName: Ak-48
   primary: 1
   auto: 0
-  damage: 10
+  damage: 20
   alertSoundRange: 0
   inaccuracy: 5
   fireRate: 0.35
