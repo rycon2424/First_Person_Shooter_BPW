@@ -71,7 +71,7 @@ public class AlertState : State
             else
             {
                 e.weapon.transform.LookAt(e.player);
-                e.weapon.Shoot();
+                e.weapon.Shoot(Vector3.zero, false);
             }
         }
     }

@@ -89,7 +89,7 @@ public class FPSPlayer : Actor
 
     void Update()
     {
-        Debugging();
+        //Debugging();
         if (!isAlive)
         {
             return;
@@ -196,7 +196,7 @@ public class FPSPlayer : Actor
     void ShootWithGun()
     {
         hands.Play("Shoot");
-        currentWeapon.Shoot();
+        currentWeapon.Shoot(transform.position, true);
         currentWeapon.ammo--;
         uim.UpdateAmmo(currentWeapon.ammo);
         GunAlert(currentWeapon.alertSoundRange);

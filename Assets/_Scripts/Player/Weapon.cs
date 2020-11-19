@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
     [HideInInspector]
     public bool cooldown;
 
-    public void Shoot()
+    public void Shoot(Vector3 spawnLocation, bool useSpawnLocation)
     {
         cooldown = true;
         Invoke("Cooldown", fireRate);
@@ -38,9 +38,18 @@ public class Weapon : MonoBehaviour
 
         Vector3 newDirection = (offset + transform.forward).normalized;
 
-        Debug.DrawRay(gameObject.transform.position, newDirection * 200, Color.red, 0.1f);  //RayCast Debug
-        Ray myRay = new Ray(gameObject.transform.position, newDirection);
+        Ray myRay;
         RaycastHit hit;
+        if (useSpawnLocation)
+        {
+            Debug.DrawRay(spawnLocation, newDirection * 200, Color.red, 0.1f);  //RayCast Debug
+            myRay = new Ray(spawnLocation, newDirection);
+        }
+        else
+        {
+            Debug.DrawRay(gameObject.transform.position, newDirection * 200, Color.red, 0.1f);  //RayCast Debug
+            myRay = new Ray(gameObject.transform.position, newDirection);
+        }
 
         if (Physics.Raycast(myRay, out hit, 200))
         {
