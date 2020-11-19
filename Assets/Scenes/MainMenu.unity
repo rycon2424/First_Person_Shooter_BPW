@@ -4237,7 +4237,7 @@ Transform:
   - {fileID: 2064009207}
   - {fileID: 643594609}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &103054237
 PrefabInstance:
@@ -5771,11 +5771,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 140923866}
-  - component: {fileID: 140923867}
   - component: {fileID: 140923865}
   - component: {fileID: 140923864}
   - component: {fileID: 140923863}
-  - component: {fileID: 140923868}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -5859,176 +5857,14 @@ RectTransform:
   - {fileID: 851164198}
   - {fileID: 1951879922}
   - {fileID: 1378469644}
-  - {fileID: 1026757977}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1954531512}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &140923867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140923862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d809bdb160c02b45b64237ba9614685, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: {fileID: 1207342143}
-  missionSelect: {fileID: 895841919}
-  mapName: {fileID: 0}
-  maps: []
-  mapNames: []
-  equipmentSelect: {fileID: 851164197}
-  secondarySelect: {fileID: 1951879921}
-  primaryWeapons:
-  - _name: M4A4
-    auto: 1
-    _lethality: 8
-    _loudness: 8
-    _accuracy: 7
-    _fireRate: 7
-    _ammo: 4
-    weapon: {fileID: 480513333}
-  - _name: SMG-Tactical
-    auto: 0
-    _lethality: 7
-    _loudness: 6
-    _accuracy: 8
-    _fireRate: 8
-    _ammo: 3
-    weapon: {fileID: 1438685212}
-  - _name: AK-47
-    auto: 1
-    _lethality: 10
-    _loudness: 10
-    _accuracy: 4
-    _fireRate: 8
-    _ammo: 4
-    weapon: {fileID: 1155998488}
-  - _name: M16-S
-    auto: 1
-    _lethality: 5
-    _loudness: 2
-    _accuracy: 9
-    _fireRate: 6
-    _ammo: 2
-    weapon: {fileID: 824099195}
-  - _name: AKS
-    auto: 0
-    _lethality: 8
-    _loudness: 8
-    _accuracy: 1
-    _fireRate: 10
-    _ammo: 5
-    weapon: {fileID: 810993959}
-  secondaryWeapons:
-  - _name: M9 BARRETA
-    auto: 0
-    _lethality: 3
-    _loudness: 7
-    _accuracy: 7
-    _fireRate: 9
-    _ammo: 3
-    weapon: {fileID: 1466804018}
-  - _name: SIG Sauer
-    auto: 0
-    _lethality: 1
-    _loudness: 1
-    _accuracy: 9
-    _fireRate: 8
-    _ammo: 2
-    weapon: {fileID: 1398705179}
-  - _name: Colt45
-    auto: 0
-    _lethality: 10
-    _loudness: 9
-    _accuracy: 9
-    _fireRate: 2
-    _ammo: 2
-    weapon: {fileID: 428351962}
-  weaponname: {fileID: 1219398426}
-  auto: {fileID: 1387031648}
-  leth:
-  - {fileID: 877812928}
-  - {fileID: 1134071646}
-  - {fileID: 2039938638}
-  - {fileID: 1783259360}
-  - {fileID: 483018353}
-  - {fileID: 1541775705}
-  - {fileID: 1862407175}
-  - {fileID: 46816725}
-  - {fileID: 1292640682}
-  - {fileID: 884101829}
-  loud:
-  - {fileID: 2030512219}
-  - {fileID: 16896200}
-  - {fileID: 2076753357}
-  - {fileID: 684107304}
-  - {fileID: 1215987123}
-  - {fileID: 17641727}
-  - {fileID: 193956762}
-  - {fileID: 871552997}
-  - {fileID: 1928208046}
-  - {fileID: 1962312166}
-  acc:
-  - {fileID: 1095455898}
-  - {fileID: 50501119}
-  - {fileID: 357518762}
-  - {fileID: 56998156}
-  - {fileID: 1190337494}
-  - {fileID: 1721226949}
-  - {fileID: 1402933364}
-  - {fileID: 1399915826}
-  - {fileID: 1902978636}
-  - {fileID: 769573144}
-  fire:
-  - {fileID: 235828104}
-  - {fileID: 484124230}
-  - {fileID: 556216061}
-  - {fileID: 45874989}
-  - {fileID: 1303642313}
-  - {fileID: 17645969}
-  - {fileID: 1089004916}
-  - {fileID: 178429149}
-  - {fileID: 379762443}
-  - {fileID: 615544183}
-  ammo:
-  - {fileID: 1430527689}
-  - {fileID: 2050023998}
-  - {fileID: 1572501618}
-  - {fileID: 1893462508}
-  - {fileID: 1259903593}
-  - {fileID: 1750590423}
-  - {fileID: 1573817588}
-  - {fileID: 218782496}
-  - {fileID: 1842496711}
-  - {fileID: 705579380}
---- !u!95 &140923868
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140923862}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 13bf6061230d2b94daf76db48c176283, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &142797314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8084,7 +7920,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: PreviousWeapon
         m_Mode: 6
         m_Arguments:
@@ -10902,7 +10738,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: CloseMenu
         m_Mode: 3
         m_Arguments:
@@ -10913,7 +10749,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextMenu
         m_Mode: 3
         m_Arguments:
@@ -12205,7 +12041,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &329300644
 PrefabInstance:
@@ -15699,7 +15535,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: CloseMenu
         m_Mode: 3
         m_Arguments:
@@ -15710,7 +15546,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextMenu
         m_Mode: 3
         m_Arguments:
@@ -23230,7 +23066,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextMenu
         m_Mode: 3
         m_Arguments:
@@ -23241,7 +23077,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: CloseMenu
         m_Mode: 3
         m_Arguments:
@@ -24856,7 +24692,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextMenu
         m_Mode: 3
         m_Arguments:
@@ -24867,7 +24703,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: CloseMenu
         m_Mode: 3
         m_Arguments:
@@ -28855,7 +28691,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextMenu
         m_Mode: 3
         m_Arguments:
@@ -28866,7 +28702,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: CloseMenu
         m_Mode: 3
         m_Arguments:
@@ -33320,7 +33156,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: PreviousWeapon
         m_Mode: 6
         m_Arguments:
@@ -36401,13 +36237,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026757974}
-  m_LocalRotation: {x: -0.122678466, y: 0.20189284, z: -0.024378603, w: -0.9713882}
-  m_LocalPosition: {x: -873.7737, y: -531.02496, z: 292.09006}
-  m_LocalScale: {x: 1.9571865, y: 1.9571865, z: 1.9571865}
-  m_Children: []
-  m_Father: {fileID: 140923866}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.08871686, y: 0.20262039, z: -0.017320719, w: -0.9750766}
+  m_LocalPosition: {x: -447.7, y: -271.78, z: 153.68}
+  m_LocalScale: {x: 1.0397553, y: 1.0397553, z: 1.0397553}
+  m_Children:
+  - {fileID: 1706013480}
+  m_Father: {fileID: 1954531512}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 10.372001, y: -23.489, z: -0.127}
 --- !u!1001 &1026857448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42031,6 +41868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207342144}
+  - component: {fileID: 1207342145}
   m_Layer: 5
   m_Name: Main Menu 0
   m_TagString: Untagged
@@ -42060,6 +41898,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1207342145
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207342143}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13bf6061230d2b94daf76db48c176283, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1207974971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43719,7 +43576,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextWeapon
         m_Mode: 6
         m_Arguments:
@@ -44741,7 +44598,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextMenu
         m_Mode: 3
         m_Arguments:
@@ -44752,7 +44609,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: CloseMenu
         m_Mode: 3
         m_Arguments:
@@ -45859,7 +45716,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextWeapon
         m_Mode: 6
         m_Arguments:
@@ -56519,7 +56376,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: NextMap
         m_Mode: 1
         m_Arguments:
@@ -58208,6 +58065,98 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 886721a110fc7be4898b1b4109acbb35, type: 3}
+--- !u!1 &1706013479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706013480}
+  - component: {fileID: 1706013481}
+  m_Layer: 0
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1706013480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706013479}
+  m_LocalRotation: {x: 0.07941523, y: 0.001489073, z: -0.0001575388, w: -0.9968406}
+  m_LocalPosition: {x: -0.000021273341, y: 0.00038385193, z: -0.00002434182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1026757977}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &1706013481
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706013479}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 3
+  m_Range: 3
+  m_SpotAngle: 38.8
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1707178974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66551,6 +66500,201 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1954466860}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1954531511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954531512}
+  - component: {fileID: 1954531513}
+  - component: {fileID: 1954531514}
+  m_Layer: 0
+  m_Name: MainMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1954531512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954531511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 490.5, y: 276, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 140923866}
+  - {fileID: 1026757977}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1954531513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954531511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d809bdb160c02b45b64237ba9614685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: {fileID: 1207342143}
+  missionSelect: {fileID: 895841919}
+  mapName: {fileID: 810151817}
+  maps: []
+  mapNames: []
+  equipmentSelect: {fileID: 851164197}
+  secondarySelect: {fileID: 1951879921}
+  primaryWeapons:
+  - _name: M4A4
+    auto: 1
+    _lethality: 8
+    _loudness: 8
+    _accuracy: 7
+    _fireRate: 7
+    _ammo: 4
+    weapon: {fileID: 480513333}
+  - _name: SMG-Tactical
+    auto: 0
+    _lethality: 7
+    _loudness: 6
+    _accuracy: 8
+    _fireRate: 8
+    _ammo: 3
+    weapon: {fileID: 1438685212}
+  - _name: AK-47
+    auto: 1
+    _lethality: 10
+    _loudness: 10
+    _accuracy: 4
+    _fireRate: 8
+    _ammo: 4
+    weapon: {fileID: 1155998488}
+  - _name: M16-S
+    auto: 1
+    _lethality: 5
+    _loudness: 2
+    _accuracy: 9
+    _fireRate: 6
+    _ammo: 2
+    weapon: {fileID: 824099195}
+  - _name: AKS
+    auto: 0
+    _lethality: 8
+    _loudness: 8
+    _accuracy: 1
+    _fireRate: 10
+    _ammo: 5
+    weapon: {fileID: 810993959}
+  secondaryWeapons:
+  - _name: M9 BARRETA
+    auto: 0
+    _lethality: 3
+    _loudness: 7
+    _accuracy: 7
+    _fireRate: 9
+    _ammo: 3
+    weapon: {fileID: 1466804018}
+  - _name: SIG Sauer
+    auto: 0
+    _lethality: 1
+    _loudness: 1
+    _accuracy: 9
+    _fireRate: 8
+    _ammo: 2
+    weapon: {fileID: 1398705179}
+  - _name: Colt45
+    auto: 0
+    _lethality: 10
+    _loudness: 9
+    _accuracy: 9
+    _fireRate: 2
+    _ammo: 2
+    weapon: {fileID: 428351962}
+  weaponname: {fileID: 1219398426}
+  auto: {fileID: 1387031648}
+  leth:
+  - {fileID: 877812928}
+  - {fileID: 1134071646}
+  - {fileID: 2039938638}
+  - {fileID: 1783259360}
+  - {fileID: 483018353}
+  - {fileID: 1541775705}
+  - {fileID: 1862407175}
+  - {fileID: 46816725}
+  - {fileID: 1292640682}
+  - {fileID: 884101829}
+  loud:
+  - {fileID: 2030512219}
+  - {fileID: 16896200}
+  - {fileID: 2076753357}
+  - {fileID: 684107304}
+  - {fileID: 1215987123}
+  - {fileID: 17641727}
+  - {fileID: 193956762}
+  - {fileID: 871552997}
+  - {fileID: 1928208046}
+  - {fileID: 1962312166}
+  acc:
+  - {fileID: 1095455898}
+  - {fileID: 50501119}
+  - {fileID: 357518762}
+  - {fileID: 56998156}
+  - {fileID: 1190337494}
+  - {fileID: 1721226949}
+  - {fileID: 1402933364}
+  - {fileID: 1399915826}
+  - {fileID: 1902978636}
+  - {fileID: 769573144}
+  fire:
+  - {fileID: 235828104}
+  - {fileID: 484124230}
+  - {fileID: 556216061}
+  - {fileID: 45874989}
+  - {fileID: 1303642313}
+  - {fileID: 17645969}
+  - {fileID: 1089004916}
+  - {fileID: 178429149}
+  - {fileID: 379762443}
+  - {fileID: 615544183}
+  ammo:
+  - {fileID: 1430527689}
+  - {fileID: 2050023998}
+  - {fileID: 1572501618}
+  - {fileID: 1893462508}
+  - {fileID: 1259903593}
+  - {fileID: 1750590423}
+  - {fileID: 1573817588}
+  - {fileID: 218782496}
+  - {fileID: 1842496711}
+  - {fileID: 705579380}
+--- !u!95 &1954531514
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954531511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47b17a04d5216d44ea41a56f02844c9d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1954536986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68574,7 +68718,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140923867}
+      - m_Target: {fileID: 1954531513}
         m_MethodName: PreviousMap
         m_Mode: 1
         m_Arguments:
