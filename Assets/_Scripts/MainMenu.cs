@@ -123,9 +123,11 @@ public class MainMenu : MonoBehaviour
         if (boolean == 1)
         {
             DisplayStats(primaryWeapons[currentPrimaryWeapon]);
+            GearInstance.instance.Primary(primaryWeapons[currentPrimaryWeapon]._name);
             return;
         }
         DisplayStats(secondaryWeapons[currentSecondaryWeapon]);
+        GearInstance.instance.Secondary(secondaryWeapons[currentSecondaryWeapon]._name);
     }
     
     public void PreviousWeapon(bool primary)
@@ -139,6 +141,7 @@ public class MainMenu : MonoBehaviour
             primaryWeapons[currentPrimaryWeapon].weapon.SetActive(false);
             currentPrimaryWeapon--;
             DisplayStats(primaryWeapons[currentPrimaryWeapon]);
+            GearInstance.instance.Primary(primaryWeapons[currentPrimaryWeapon]._name);
         }
         else
         {
@@ -149,6 +152,7 @@ public class MainMenu : MonoBehaviour
             secondaryWeapons[currentSecondaryWeapon].weapon.SetActive(false);
             currentSecondaryWeapon--;
             DisplayStats(secondaryWeapons[currentSecondaryWeapon]);
+            GearInstance.instance.Secondary(secondaryWeapons[currentSecondaryWeapon]._name);
         }
     }
 
@@ -163,6 +167,7 @@ public class MainMenu : MonoBehaviour
             primaryWeapons[currentPrimaryWeapon].weapon.SetActive(false);
             currentPrimaryWeapon++;
             DisplayStats(primaryWeapons[currentPrimaryWeapon]);
+            GearInstance.instance.Primary(primaryWeapons[currentPrimaryWeapon]._name);
         }
         else
         {
@@ -173,6 +178,7 @@ public class MainMenu : MonoBehaviour
             secondaryWeapons[currentSecondaryWeapon].weapon.SetActive(false);
             currentSecondaryWeapon++;
             DisplayStats(secondaryWeapons[currentSecondaryWeapon]);
+            GearInstance.instance.Secondary(secondaryWeapons[currentSecondaryWeapon]._name);
         }
     }
 
@@ -205,6 +211,11 @@ public class MainMenu : MonoBehaviour
         {
             ob[i].SetActive(true);
         }
+    }
+
+    public void GoToLoading()
+    {
+        EnterLoading.NextScene(mapNames[currentMap]);
     }
 
     [System.Serializable]

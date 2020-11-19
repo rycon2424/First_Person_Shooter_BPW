@@ -24041,7 +24041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716d4f08f9af57542a596fc09c0234ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: SIG Sauer
+  weaponName: SIG Sauer-S
   primary: 0
   auto: 0
   damage: 5

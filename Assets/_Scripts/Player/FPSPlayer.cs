@@ -33,6 +33,16 @@ public class FPSPlayer : Actor
 
     void Start()
     {
+        if (GearInstance.instance != null)
+        {
+            GrabNewWeapon(GearInstance.instance.secondary);
+            GrabNewWeapon(GearInstance.instance.primary);
+            currentWeapon = primary;
+
+            GearInstance.instance.DestroyThis();
+
+            SwitchWeapon(primary);
+        }
         fpsCam = FindObjectOfType<FPSCamera>();  // FINDING THE FPSCAMERA SCRIPT TO ACCESS THE RAYCAST FUNCTION
         cc = GetComponent<CharacterController>();
         uim = GetComponent<UserInterfaceManager>();
@@ -173,26 +183,12 @@ public class FPSPlayer : Actor
         if (newWeap.primary)
         {
             primary = newWeap;
-            if (currentWeapon == null)
-            {
-                SwitchWeapon(newWeap);
-            }
-            else if (currentWeapon.primary == true)
-            {
-                SwitchWeapon(newWeap);
-            }
+            SwitchWeapon(newWeap);
         }
         else
         {
             secondary = newWeap;
-            if (currentWeapon == null)
-            {
-                SwitchWeapon(newWeap);
-            }
-            else if (currentWeapon.primary == false)
-            {
-                SwitchWeapon(newWeap);
-            }
+            SwitchWeapon(newWeap);
         }
         UpdateUI();
     }
