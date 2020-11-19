@@ -5427,11 +5427,13 @@ MonoBehaviour:
   footSource: {fileID: 2223553930294677470}
   radar: {fileID: 2223553929942159864}
   coverChance: 100
+  investigator: 0
   reactionTime: 1
   maxPatience: 2
   viewDistancePatrol: {x: 4, y: 1.5, z: 1.5}
   viewDistanceAlert: {x: 7, y: 2, z: 2}
   weapon: {fileID: 2223553929235503661}
+  playerInSight: 0
   playerLastPosition: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
   anim: {fileID: 0}
@@ -21243,7 +21245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4244443722599304080
 Transform:
   m_ObjectHideFlags: 0
@@ -21582,7 +21584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2756411043537468169
 Transform:
   m_ObjectHideFlags: 0
