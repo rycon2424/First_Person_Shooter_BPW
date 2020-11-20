@@ -66871,7 +66871,7 @@ MonoBehaviour:
     _ammo: 6
     weapon: {fileID: 810993959}
   - _name: RPK
-    auto: 0
+    auto: 1
     _lethality: 8
     _loudness: 7
     _accuracy: 6
