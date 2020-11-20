@@ -38606,7 +38606,7 @@ MonoBehaviour:
   mouseSensitivityY: 1.5
   gravity: -0.05
   weaponHands: {fileID: 8670524870661835326}
-  crosshair: {fileID: 0}
+  crosshair: {fileID: 9186267931392686883}
   hands: {fileID: 8670524870661835321}
   currentWeapon: {fileID: 0}
   primary: {fileID: 0}
