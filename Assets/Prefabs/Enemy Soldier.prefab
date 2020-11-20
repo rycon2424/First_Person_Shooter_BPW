@@ -5429,9 +5429,9 @@ MonoBehaviour:
   coverChance: 50
   investigator: 1
   reactionTime: 0.5
-  maxPatience: 2
-  viewDistancePatrol: {x: 4, y: 1.5, z: 1.5}
-  viewDistanceAlert: {x: 7, y: 2, z: 2}
+  maxPatience: 0.6
+  viewDistancePatrol: {x: 7, y: 1.5, z: 1.5}
+  viewDistanceAlert: {x: 10, y: 2, z: 2}
   weapon: {fileID: 2223553929235503661}
   playerInSight: 0
   playerLastPosition: {x: 0, y: 0, z: 0}
@@ -21776,7 +21776,7 @@ Transform:
   m_GameObject: {fileID: 5019623537258641343}
   m_LocalRotation: {x: -0, y: -0.9977175, z: -0, w: 0.06752686}
   m_LocalPosition: {x: -0.19, y: 0.8130522, z: -0.1}
-  m_LocalScale: {x: 7, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2218755094660334088}
   m_RootOrder: 37
