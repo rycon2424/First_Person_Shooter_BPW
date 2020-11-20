@@ -26,27 +26,36 @@ public class Weapon : MonoBehaviour
     [HideInInspector]
     public bool cooldown;
 
-    public void Shoot(Vector3 spawnLocation, bool useSpawnLocation)
+    public void Shoot(Transform spawnLocation, bool useSpawnLocation, bool aim)
     {
         cooldown = true;
         Invoke("Cooldown", fireRate);
         muzzleFlash.Play();
 
-        float softInaccuracy = inaccuracy / 100;
-
-        Vector3 offset = new Vector3(Random.Range(-softInaccuracy, softInaccuracy), Random.Range(-softInaccuracy, softInaccuracy), Random.Range(-softInaccuracy, softInaccuracy));
-
-        Vector3 newDirection = (offset + transform.forward).normalized;
-
-        Ray myRay;
-        RaycastHit hit;
-        if (useSpawnLocation)
+        float softInaccuracy = 0;
+        if (aim)
         {
-            Debug.DrawRay(spawnLocation, newDirection * 200, Color.red, 0.1f);  //RayCast Debug
-            myRay = new Ray(spawnLocation, newDirection);
+            softInaccuracy = inaccuracy / 200;
         }
         else
         {
+            softInaccuracy = inaccuracy / 100;
+        }
+
+        Vector3 offset = new Vector3(Random.Range(-softInaccuracy, softInaccuracy), Random.Range(-softInaccuracy, softInaccuracy), Random.Range(-softInaccuracy, softInaccuracy));
+        Vector3 newDirection;
+
+      Ray myRay;
+        RaycastHit hit;
+        if (useSpawnLocation)
+        {
+            newDirection = (offset + spawnLocation.forward).normalized;
+            Debug.DrawRay(spawnLocation.position, newDirection * 200, Color.red, 0.1f);  //RayCast Debug
+            myRay = new Ray(spawnLocation.position, newDirection);
+        }
+        else
+        {
+            newDirection = (offset + transform.forward).normalized;
             Debug.DrawRay(gameObject.transform.position, newDirection * 200, Color.red, 0.1f);  //RayCast Debug
             myRay = new Ray(gameObject.transform.position, newDirection);
         }

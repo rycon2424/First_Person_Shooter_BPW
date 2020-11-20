@@ -10,6 +10,7 @@ public class FPSPlayer : Actor
     [SerializeField] public float mouseSensitivityY = 100f;
     [SerializeField] public float gravity = -5f;
     public GameObject weaponHands;
+    public GameObject crosshair;
     public Animator hands;
 
     [Header("Combat Settings")]
@@ -114,6 +115,7 @@ public class FPSPlayer : Actor
             sprinting = true;
             ySpeed = (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
             xSpeed = (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime);
+            hands.SetBool("Aimed", false);
         }
         else
         {
@@ -175,6 +177,7 @@ public class FPSPlayer : Actor
         if (Input.GetKeyDown(KeyCode.R) && currentWeapon.mags > 0)
         {
             reloading = true;
+            hands.SetBool("Aimed", false);
             hands.Play("Reload");
         }
         if (currentWeapon.auto == true)
@@ -191,12 +194,29 @@ public class FPSPlayer : Actor
                 ShootWithGun();
             }
         }
+        if (Input.GetMouseButton(1))
+        {
+            hands.SetBool("Aimed", true);
+            crosshair.SetActive(false);
+        }
+        else
+        {
+            hands.SetBool("Aimed", false);
+            crosshair.SetActive(true);
+        }
     }
 
     void ShootWithGun()
     {
-        hands.Play("Shoot");
-        currentWeapon.Shoot(transform.position, true);
+        if (hands.GetBool("Aimed"))
+        {
+            hands.Play("ScopedShot");
+        }
+        else
+        {
+            hands.Play("Shoot");
+        }
+        currentWeapon.Shoot(fpsCam.transform, true, hands.GetBool("Aimed"));
         currentWeapon.ammo--;
         uim.UpdateAmmo(currentWeapon.ammo);
         GunAlert(currentWeapon.alertSoundRange);
