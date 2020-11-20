@@ -40,7 +40,7 @@ public class FPSCamera : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(myRay, out hit, FPSPlayer.rangeCameraRay))
         {
-            Debug.Log(hit.collider.tag);
+            Debug.Log(hit.collider.gameObject.name + " has as tag "+ hit.collider.tag);
             if (hit.collider.CompareTag("WorldWeapon") && FPSPlayer.reloading == false)
             {
                 FPSPlayer.GrabNewWeapon(hit.collider.GetComponent<Weapon>());

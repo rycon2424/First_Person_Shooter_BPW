@@ -94,5 +94,5 @@ public class Weapon : MonoBehaviour
     {
         cooldown = false;
     }
-
+    
 }
