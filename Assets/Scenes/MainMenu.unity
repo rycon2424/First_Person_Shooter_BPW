@@ -17151,6 +17151,7 @@ Transform:
   - {fileID: 1155998487}
   - {fileID: 824099194}
   - {fileID: 810993958}
+  - {fileID: 1582897864}
   m_Father: {fileID: 576559564725416280}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -0.347, y: 71.12701, z: -81.102005}
@@ -54881,6 +54882,92 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1580459946}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1582897863
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475823841}
+    m_Modifications:
+    - target: {fileID: 2379745390959483729, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_Name
+      value: RPK
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379745390959483729, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65ce78d1062e56f4b95572c9b9e9cce2, type: 3}
+--- !u!4 &1582897864 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2382759049495901859, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1582897863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1582897865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2379745390959483729, guid: 65ce78d1062e56f4b95572c9b9e9cce2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1582897863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1583993230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66745,44 +66832,52 @@ MonoBehaviour:
   primaryWeapons:
   - _name: M4A4
     auto: 1
-    _lethality: 8
-    _loudness: 8
+    _lethality: 7
+    _loudness: 7
     _accuracy: 8
     _fireRate: 7
     _ammo: 8
     weapon: {fileID: 480513333}
   - _name: SMG-Tactical
     auto: 0
-    _lethality: 6
-    _loudness: 5
+    _lethality: 5
+    _loudness: 4
     _accuracy: 9
     _fireRate: 8
     _ammo: 6
     weapon: {fileID: 1438685212}
   - _name: Ak-47
     auto: 1
-    _lethality: 10
-    _loudness: 10
+    _lethality: 8
+    _loudness: 8
     _accuracy: 5
     _fireRate: 8
     _ammo: 8
     weapon: {fileID: 1155998488}
   - _name: M16-S
     auto: 1
-    _lethality: 7
+    _lethality: 6
     _loudness: 2
     _accuracy: 9
     _fireRate: 6
     _ammo: 4
     weapon: {fileID: 824099195}
   - _name: Aks
-    auto: 0
+    auto: 1
     _lethality: 4
-    _loudness: 8
+    _loudness: 6
     _accuracy: 1
     _fireRate: 10
     _ammo: 6
     weapon: {fileID: 810993959}
+  - _name: RPK
+    auto: 0
+    _lethality: 8
+    _loudness: 7
+    _accuracy: 6
+    _fireRate: 5
+    _ammo: 6
+    weapon: {fileID: 1582897865}
   secondaryWeapons:
   - _name: M9 Barreta
     auto: 0
