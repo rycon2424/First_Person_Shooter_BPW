@@ -14,10 +14,10 @@ public class Enemy : Actor
     public float maxPatience;
     public Vector3 viewDistancePatrol = new Vector3(5, 1, 1);
     public Vector3 viewDistanceAlert = new Vector3(7, 2, 2);
+    public bool playerInSight;
     [Space]
     public Weapon weapon;
-
-    [HideInInspector] public bool playerInSight;
+    
     [HideInInspector] public StateMachine statemachine;
     [HideInInspector] public Vector3 playerLastPosition;
     [HideInInspector] public NavMeshAgent agent;
@@ -167,7 +167,7 @@ public class Enemy : Actor
         Ray scan = new Ray(startPos, direction);
         RaycastHit hit;
         Debug.DrawRay(startPos, direction * 2, Color.blue);
-        if (Physics.Raycast(scan, out hit, 30))
+        if (Physics.Raycast(scan, out hit, 150))
         {
             if (hit.collider.CompareTag("Humanoid"))
             {

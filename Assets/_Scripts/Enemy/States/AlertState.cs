@@ -22,6 +22,10 @@ public class AlertState : State
     public override void StateUpdate(Enemy e)
     {
         GameObject target = e.SeeActor(e.transform.position + e.eyeOffset);
+        if (target != null)
+        {
+            Debug.Log("See player");
+        }
         if (target && e.playerInSight == true)
         {
             e.tempPlayer = target.GetComponent<FPSPlayer>();
