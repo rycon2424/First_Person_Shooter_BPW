@@ -66860,7 +66860,7 @@ MonoBehaviour:
     _loudness: 2
     _accuracy: 9
     _fireRate: 6
-    _ammo: 4
+    _ammo: 2
     weapon: {fileID: 824099195}
   - _name: Aks
     auto: 1
@@ -66875,7 +66875,7 @@ MonoBehaviour:
     _lethality: 8
     _loudness: 7
     _accuracy: 6
-    _fireRate: 5
+    _fireRate: 4
     _ammo: 6
     weapon: {fileID: 1582897865}
   secondaryWeapons:
@@ -66893,7 +66893,7 @@ MonoBehaviour:
     _loudness: 1
     _accuracy: 9
     _fireRate: 8
-    _ammo: 4
+    _ammo: 2
     weapon: {fileID: 1398705179}
   - _name: Colt45
     auto: 0
