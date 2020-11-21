@@ -108,14 +108,21 @@ public class FPSPlayer : Actor
 
     private void Move() // THE MOVEMENT OF THE CHARACTER WITH WASD AND ARROW KEYS
     {
-        Vector3 ySpeed;
-        Vector3 xSpeed;
+        Vector3 ySpeed = Vector3.zero;
+        Vector3 xSpeed = Vector3.zero;
         if (Input.GetKey(KeyCode.LeftShift) && reloading == false)
         {
-            sprinting = true;
-            ySpeed = (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
-            xSpeed = (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime);
-            hands.SetBool("Aimed", false);
+            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+            {
+                sprinting = true;
+                ySpeed = (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
+                xSpeed = (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime);
+                hands.SetBool("Aimed", false);
+            }
+            else
+            {
+                sprinting = false;
+            }
         }
         else
         {
