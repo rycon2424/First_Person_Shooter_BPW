@@ -11,6 +11,7 @@ public class FPSPlayer : Actor
     [SerializeField] public float gravity = -5f;
     public GameObject weaponHands;
     public GameObject crosshair;
+    public DeferredNightVisionEffect nightVision;
     public Animator hands;
 
     [Header("Combat Settings")]
@@ -31,6 +32,7 @@ public class FPSPlayer : Actor
     Enemy[] enemiesOnMap;
     GameManager gm;
     bool sprinting;
+    bool nv;
 
     void Start()
     {
@@ -103,7 +105,17 @@ public class FPSPlayer : Actor
         {
             Combat();
         }
+        NightVision();
         Move();
+    }
+
+    void NightVision()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            nv = !nv;
+            nightVision.enabled = nv;
+        }
     }
 
     private void Move() // THE MOVEMENT OF THE CHARACTER WITH WASD AND ARROW KEYS

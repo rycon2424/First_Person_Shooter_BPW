@@ -44255,6 +44255,7 @@ MonoBehaviour:
   gravity: -0.05
   weaponHands: {fileID: 8670524870661835326}
   crosshair: {fileID: 9186267931392686883}
+  nightVision: {fileID: 39048770}
   hands: {fileID: 8670524870661835321}
   currentWeapon: {fileID: 0}
   primary: {fileID: 0}
