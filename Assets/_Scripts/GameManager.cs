@@ -14,9 +14,20 @@ public class GameManager : MonoBehaviour
 
     public GameObject victory;
     public GameObject defeat;
+    [Space]
+    public int max;
+    public List<GameObject> enemiesOnMap = new List<GameObject>();
 
     void Awake()
     {
+        int currentlyOnMap = 0;
+        while (currentlyOnMap != max)
+        {
+            int randomEnemy = Random.Range(0, enemiesOnMap.Count);
+            enemiesOnMap[randomEnemy].SetActive(true);
+            enemiesOnMap.Remove(enemiesOnMap[randomEnemy]);
+            currentlyOnMap++;
+        }
         enemies = FindObjectsOfType<Enemy>();
         currentEnemies = enemies.Length;
         maxEnemies.text = currentEnemies.ToString();

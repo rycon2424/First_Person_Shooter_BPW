@@ -152,7 +152,7 @@ public class Enemy : Actor
 
         while (Vector3.Distance(transform.position, newPos) > 0.75f)
         {
-            //Debug.Log(Vector3.Distance(transform.position, newPos));
+            newCover.UpdateDistance(Vector3.Distance(transform.position, newPos));
             yield return new WaitForEndOfFrame(); ;
         }
         newCover.taken = false;

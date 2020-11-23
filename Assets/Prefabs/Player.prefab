@@ -34792,7 +34792,7 @@ MonoBehaviour:
   sniperScope: 1
   zoom: 6
   damage: 100
-  alertSoundRange: 80
+  alertSoundRange: 90
   inaccuracy: 0
   fireRate: 3
   muzzleFlash: {fileID: 362056610}
@@ -35082,7 +35082,7 @@ MonoBehaviour:
   sniperScope: 1
   zoom: 15
   damage: 25
-  alertSoundRange: 60
+  alertSoundRange: 70
   inaccuracy: 0.5
   fireRate: 2
   muzzleFlash: {fileID: 1891290735}
@@ -40808,7 +40808,7 @@ MonoBehaviour:
   sniperScope: 0
   zoom: 0
   damage: 24
-  alertSoundRange: 30
+  alertSoundRange: 40
   inaccuracy: 1.5
   fireRate: 0.1
   muzzleFlash: {fileID: 2798290664605205231}
@@ -41497,7 +41497,7 @@ MonoBehaviour:
   sniperScope: 0
   zoom: 0
   damage: 30
-  alertSoundRange: 40
+  alertSoundRange: 50
   inaccuracy: 2.5
   fireRate: 0.125
   muzzleFlash: {fileID: 9186267931670886715}
@@ -42768,7 +42768,7 @@ MonoBehaviour:
   sniperScope: 0
   zoom: 12
   damage: 20
-  alertSoundRange: 30
+  alertSoundRange: 25
   inaccuracy: 2
   fireRate: 0.45
   muzzleFlash: {fileID: 827463847}
@@ -43868,7 +43868,7 @@ MonoBehaviour:
   sniperScope: 0
   zoom: 0
   damage: 12
-  alertSoundRange: 30
+  alertSoundRange: 40
   inaccuracy: 6
   fireRate: 0.05
   muzzleFlash: {fileID: 9186267930857930933}
@@ -53158,7 +53158,7 @@ MonoBehaviour:
   sniperScope: 0
   zoom: 0
   damage: 20
-  alertSoundRange: 20
+  alertSoundRange: 30
   inaccuracy: 1.25
   fireRate: 0.035
   muzzleFlash: {fileID: 9186267932281329083}
