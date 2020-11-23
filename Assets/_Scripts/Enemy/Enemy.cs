@@ -150,10 +150,10 @@ public class Enemy : Actor
 
         statemachine.GoToState(this, "CoverState");
 
-        while (Vector3.Distance(transform.position, newPos) > 0.75f)
+        while (Vector3.Distance(transform.position, newPos) > 2)
         {
             newCover.UpdateDistance(Vector3.Distance(transform.position, newPos));
-            yield return new WaitForEndOfFrame(); ;
+            yield return new WaitForSeconds(Random.Range(0.1f, 2));
         }
         newCover.taken = false;
         statemachine.GoToState(this, "AlertState");
