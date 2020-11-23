@@ -15,6 +15,8 @@ public class FPSCamera : MonoBehaviour
 
     void Start()
     {
+        Shader.Find("DeferredNightVision");
+        Shader.WarmupAllShaders();
         FPSPlayer = FindObjectOfType<FPSPlayer>();
         cameraTransform = Camera.main.transform;
     }
