@@ -42769,7 +42769,7 @@ MonoBehaviour:
   zoom: 12
   damage: 20
   alertSoundRange: 25
-  inaccuracy: 2
+  inaccuracy: 1.25
   fireRate: 0.45
   muzzleFlash: {fileID: 827463847}
   impact: {fileID: 7043585007356237445, guid: bdf0361a27c7b9a419b7654a7df13867, type: 3}
