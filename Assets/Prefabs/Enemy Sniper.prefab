@@ -6008,8 +6008,8 @@ MonoBehaviour:
   maxPatience: 2
   viewDistancePatrol: {x: 4, y: 1.5, z: 1.5}
   viewDistanceAlert: {x: 6.5, y: 2, z: 3}
-  weapon: {fileID: 7105157796520938853}
   playerInSight: 0
+  weapon: {fileID: 7105157796520938853}
   playerLastPosition: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
   anim: {fileID: 0}
@@ -6034,7 +6034,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.4
   m_Radius: 0.3
-  m_SlopeLimit: 45
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -6301,6 +6301,8 @@ MonoBehaviour:
   weaponName: Ak-48
   primary: 1
   auto: 0
+  sniperScope: 0
+  zoom: 0
   damage: 10
   alertSoundRange: 0
   inaccuracy: 5
@@ -16565,6 +16567,8 @@ MonoBehaviour:
   weaponName: Sniper
   primary: 1
   auto: 0
+  sniperScope: 0
+  zoom: 0
   damage: 50
   alertSoundRange: 0
   inaccuracy: 1
@@ -36100,13 +36104,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8827164647574654106}
-  m_LocalRotation: {x: 0.006014079, y: -0.96350074, z: -0.21566305, w: 0.15849173}
+  m_LocalRotation: {x: -0.03633835, y: -0.9628342, z: -0.20848872, w: 0.1678163}
   m_LocalPosition: {x: -0.19, y: 0.8130522, z: -0.1}
   m_LocalScale: {x: 6.5, y: 1.5, z: 3}
   m_Children: []
   m_Father: {fileID: 2441989458048727341}
   m_RootOrder: 37
-  m_LocalEulerAnglesHint: {x: -24.436, y: -160.22601, z: -5.038}
+  m_LocalEulerAnglesHint: {x: -24.436, y: -160.22601, z: 0}
 --- !u!33 &1270383118658801510
 MeshFilter:
   m_ObjectHideFlags: 0

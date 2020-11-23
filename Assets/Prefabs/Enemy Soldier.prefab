@@ -5037,6 +5037,8 @@ MonoBehaviour:
   weaponName: Sniper
   primary: 1
   auto: 0
+  sniperScope: 0
+  zoom: 0
   damage: 25
   alertSoundRange: 0
   inaccuracy: 1
@@ -5432,8 +5434,8 @@ MonoBehaviour:
   maxPatience: 0.6
   viewDistancePatrol: {x: 7, y: 1.5, z: 1.5}
   viewDistanceAlert: {x: 10, y: 2, z: 2}
-  weapon: {fileID: 2223553929235503661}
   playerInSight: 0
+  weapon: {fileID: 2223553929235503661}
   playerLastPosition: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
   anim: {fileID: 0}
@@ -5458,7 +5460,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.4
   m_Radius: 0.3
-  m_SlopeLimit: 45
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -6152,6 +6154,8 @@ MonoBehaviour:
   weaponName: Ak-48
   primary: 1
   auto: 0
+  sniperScope: 0
+  zoom: 0
   damage: 20
   alertSoundRange: 0
   inaccuracy: 5
@@ -21776,7 +21780,7 @@ Transform:
   m_GameObject: {fileID: 5019623537258641343}
   m_LocalRotation: {x: -0, y: -0.9977175, z: -0, w: 0.06752686}
   m_LocalPosition: {x: -0.19, y: 0.8130522, z: -0.1}
-  m_LocalScale: {x: 10, y: 2, z: 2}
+  m_LocalScale: {x: 7, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 2218755094660334088}
   m_RootOrder: 37

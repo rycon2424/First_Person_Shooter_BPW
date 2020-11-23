@@ -13,9 +13,8 @@ public class MainMenu : MonoBehaviour
     [Header("Mission Select")]
     public GameObject missionSelect;
     public Text mapName;
-    public GameObject[] maps;
-    public string[] mapNames;
-    private int currentMap;
+    public Map[] maps;
+    [SerializeField] private int currentMap;
 
     [Header("EquipmentSelect")]
     private int currentPrimaryWeapon;
@@ -92,6 +91,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
+            maps[currentMap].mapImage.SetActive(false);
             currentMap--;
         }
         ShowMap(currentMap);
@@ -99,12 +99,13 @@ public class MainMenu : MonoBehaviour
 
     public void NextMap()
     {
-        if (currentMap == maps.Length)
+        if (currentMap == maps.Length - 1)
         {
             return;
         }
         else
         {
+            maps[currentMap].mapImage.SetActive(false);
             currentMap++;
         }
         ShowMap(currentMap);
@@ -112,8 +113,8 @@ public class MainMenu : MonoBehaviour
 
     void ShowMap(int map)
     {
-        maps[map].SetActive(true);
-        mapName.text = mapNames[map];
+        maps[map].mapImage.SetActive(true);
+        mapName.text = maps[map].mapName;
     }
 
     //Called in animator that cant pass booleans
@@ -128,7 +129,7 @@ public class MainMenu : MonoBehaviour
         DisplayStats(secondaryWeapons[currentSecondaryWeapon]);
         GearInstance.instance.Secondary(secondaryWeapons[currentSecondaryWeapon]._name);
     }
-    
+
     public void PreviousWeapon(bool primary)
     {
         if (primary)
@@ -214,7 +215,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToLoading()
     {
-        EnterLoading.NextScene(mapNames[currentMap]);
+        EnterLoading.NextScene(maps[currentMap].mapName);
     }
 
     [System.Serializable]
@@ -228,5 +229,11 @@ public class MainMenu : MonoBehaviour
         public int _fireRate;
         public int _ammo;
         public GameObject weapon;
+    }
+    [System.Serializable]
+    public class Map
+    {
+        public string mapName;
+        public GameObject mapImage;
     }
 }
