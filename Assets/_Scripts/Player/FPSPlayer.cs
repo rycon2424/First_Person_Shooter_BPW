@@ -221,8 +221,8 @@ public class FPSPlayer : Actor
             if (currentWeapon.sniperScope)
             {
                 sniperScope.SetActive(true);
-                Camera.main.fieldOfView = currentWeapon.zoom;
             }
+            Camera.main.fieldOfView = currentWeapon.zoom;
         }
         else
         {
