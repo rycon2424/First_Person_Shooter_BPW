@@ -11,6 +11,7 @@ public class FPSPlayer : Actor
     [SerializeField] public float gravity = -5f;
     public GameObject weaponHands;
     public GameObject crosshair;
+    public GameObject sniperScope;
     public DeferredNightVisionEffect nightVision;
     public Animator hands;
 
@@ -217,11 +218,18 @@ public class FPSPlayer : Actor
         {
             hands.SetBool("Aimed", true);
             crosshair.SetActive(false);
+            if (currentWeapon.sniperScope)
+            {
+                sniperScope.SetActive(true);
+                Camera.main.fieldOfView = currentWeapon.zoom;
+            }
         }
         else
         {
             hands.SetBool("Aimed", false);
             crosshair.SetActive(true);
+            sniperScope.SetActive(false);
+            Camera.main.fieldOfView = 60;
         }
     }
 

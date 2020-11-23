@@ -8,6 +8,8 @@ public class Weapon : MonoBehaviour
     public string weaponName;
     public bool primary;
     public bool auto;
+    public bool sniperScope;
+    public float zoom;
     public int damage;
     public float alertSoundRange;
     public float inaccuracy;
