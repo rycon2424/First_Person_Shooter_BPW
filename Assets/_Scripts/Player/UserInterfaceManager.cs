@@ -9,6 +9,7 @@ public class UserInterfaceManager : MonoBehaviour
     public GameObject[] mags;
     public Slider playerHp;
     public Text weaponName;
+    public Text secondWeapon;
 
     public void UpdateWeaponName(string newName)
     {

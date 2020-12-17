@@ -246,6 +246,7 @@ public class FPSPlayer : Actor
     {
         if (currentWeapon)
         {
+            uim.secondWeapon.text = currentWeapon.weaponName;
             if (newWeap.weaponName == currentWeapon.weaponName)
             {
                 AddMag();
