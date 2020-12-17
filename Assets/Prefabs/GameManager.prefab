@@ -1893,10 +1893,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3662423736834708814}
+  - component: {fileID: 3662423736834708815}
   - component: {fileID: 3662423736834708809}
   - component: {fileID: 3662423736834708808}
   - component: {fileID: 3662423736834708811}
-  - component: {fileID: 3662423736834708815}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -1926,6 +1926,43 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &3662423736834708815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662423736834708810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5446b6e6db89244d91fb027c21f2333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesLeft: {fileID: 3662423736823227074}
+  maxEnemies: {fileID: 3662423736342391101}
+  victory: {fileID: 3662423736085398926}
+  defeat: {fileID: 3662423735799397400}
+  max: 12
+  enemiesOnMap:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!223 &3662423736834708809
 Canvas:
   m_ObjectHideFlags: 0
@@ -1986,40 +2023,3 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3662423736834708815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3662423736834708810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5446b6e6db89244d91fb027c21f2333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesLeft: {fileID: 3662423736823227074}
-  maxEnemies: {fileID: 3662423736342391101}
-  victory: {fileID: 3662423736085398926}
-  defeat: {fileID: 3662423735799397400}
-  max: 12
-  enemiesOnMap:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}

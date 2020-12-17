@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public string unlocksMap;
+    [Space]
     public Text enemiesLeft;
     public Text maxEnemies;
 
@@ -55,6 +57,14 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         victory.SetActive(true);
+        if (PlayerPrefs.HasKey(unlocksMap))
+        {
+            return;
+        }
+        else
+        {
+            PlayerPrefs.SetInt(unlocksMap, 1);
+        }
     }
 
     public void GameOverLost()
