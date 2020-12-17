@@ -65,35 +65,21 @@ public class FPSPlayer : Actor
 
     void Debugging()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.mouseScrollDelta.y > 0)
         {
             mouseSensitivityX += 10;
+            mouseSensitivityY += 0.05f;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.mouseScrollDelta.y < 0)
         {
             mouseSensitivityX -= 10;
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            mouseSensitivityY += 0.5f;
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            mouseSensitivityY -= 0.5f;
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            AudioListener.volume += 0.1f;
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            AudioListener.volume -= 0.1f;
+            mouseSensitivityY -= 0.05f;
         }
     }
 
     void Update()
     {
-        //Debugging();
+        Debugging();
         if (!isAlive)
         {
             return;
