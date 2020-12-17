@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
 
     [Header("Mission Select")]
     public GameObject missionSelect;
+    public Button selectButton;
+    public GameObject lockedIcon;
     public Text mapName;
     public Map[] maps;
     [SerializeField] private int currentMap;
@@ -34,6 +36,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        PlayerPrefs.SetInt(maps[0].mapName, 1);
     }
 
     public void NextMenu(int menu)
@@ -115,6 +118,17 @@ public class MainMenu : MonoBehaviour
     {
         maps[map].mapImage.SetActive(true);
         mapName.text = maps[map].mapName;
+        Debug.Log(PlayerPrefs.GetInt(maps[currentMap].mapName));
+        if (PlayerPrefs.GetInt(maps[currentMap].mapName) == 1)
+        {
+            lockedIcon.SetActive(false);
+            selectButton.interactable = true;
+        }
+        else
+        {
+            lockedIcon.SetActive(true);
+            selectButton.interactable = false;
+        }
     }
 
     //Called in animator that cant pass booleans
