@@ -1,3 +1,2 @@
 PlayerPref info 
  
-Name:  'City'    Value:  '1'

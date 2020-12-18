@@ -14,6 +14,8 @@ public class FPSPlayer : Actor
     public GameObject sniperScope;
     public DeferredNightVisionEffect nightVision;
     public Animator hands;
+    public int syringes;
+    public GameObject syringesEffect;
 
     [Header("Combat Settings")]
     public Weapon currentWeapon;
@@ -26,13 +28,14 @@ public class FPSPlayer : Actor
     [SerializeField] bool useRayCasting;    // ENABLED THE USE OF RAYCAST IN THE FPSCAMERA SCRIPT
     public float rangeCameraRay = 4;
 
+    [HideInInspector] public UserInterfaceManager uim;
     private int footStepInterval;
     FPSCamera fpsCam;
-    UserInterfaceManager uim;
     CharacterController cc;
     Enemy[] enemiesOnMap;
     GameManager gm;
     bool sprinting;
+    bool syringeUse;
     bool nv;
 
     void Start()
@@ -93,6 +96,7 @@ public class FPSPlayer : Actor
             Combat();
         }
         NightVision();
+        Syringe();
         Move();
     }
 
@@ -102,6 +106,20 @@ public class FPSPlayer : Actor
         {
             nv = !nv;
             nightVision.enabled = nv;
+        }
+    }
+
+    void Syringe()
+    {
+        if (Input.GetKeyDown(KeyCode.G) && syringeUse == false)
+        {
+            if (syringes > 0)
+            {
+                syringes--;
+                TakeDamage(-45);
+                uim.UpdateSyringes(syringes);
+                StartCoroutine(SyringeUse());
+            }
         }
     }
 
@@ -284,6 +302,7 @@ public class FPSPlayer : Actor
         uim.UpdateAmmo(currentWeapon.ammo);
         uim.UpdateMags(currentWeapon.mags);
         uim.UpdateWeaponName(currentWeapon.weaponName);
+        uim.UpdateSyringes(syringes);
     }
 
     void AddMag()
@@ -319,6 +338,10 @@ public class FPSPlayer : Actor
             fpsCam.Death();
             gm.GameOverLost();
         }
+        if (health > 100)
+        {
+            health = 100;
+        }
         uim.UpdateHealth(health);
     }
 
@@ -351,6 +374,17 @@ public class FPSPlayer : Actor
             e.GunShotAlert();
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    IEnumerator SyringeUse()
+    {
+        syringeUse = true;
+        syringesEffect.SetActive(true);
+        Time.timeScale = 0.25f;
+        yield return new WaitForSeconds(1);
+        Time.timeScale = 1;
+        syringesEffect.SetActive(false);
+        syringeUse = false;
     }
 
 }

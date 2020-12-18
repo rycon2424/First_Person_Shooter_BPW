@@ -7,6 +7,7 @@ public class UserInterfaceManager : MonoBehaviour
 {
     public GameObject[] bullets;
     public GameObject[] mags;
+    public GameObject[] syringes;
     public Slider playerHp;
     public Text weaponName;
     public Text secondWeapon;
@@ -44,4 +45,17 @@ public class UserInterfaceManager : MonoBehaviour
             bullets[i].SetActive(true);
         }
     }
+
+    public void UpdateSyringes(int currentSyringes)
+    {
+        foreach (var g in syringes)
+        {
+            g.SetActive(false);
+        }
+        for (int i = 0; i < currentSyringes; i++)
+        {
+            syringes[i].SetActive(true);
+        }
+    }
+
 }
