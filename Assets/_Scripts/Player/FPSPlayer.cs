@@ -62,6 +62,7 @@ public class FPSPlayer : Actor
         }
         else
         {
+            uim.UpdateSyringes(syringes);
             weaponHands.SetActive(false);
         }
     }
